@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Wytwarzanie Stron Internetowych`,
+    subtitle: 'Zamów stronę internetową, która bedzie nowoczesna, szybka, responsywna, widoczna w google.',
     description: `Wytwarzam strony internetowe - projektuję i koduję strony internetowe dla firm, pomagam dzielić się informacją w internecie.`,
     author: `Marcin Liweń`,
   },
