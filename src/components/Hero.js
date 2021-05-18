@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
@@ -11,6 +12,25 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/';
 
 import ImageBG from '../images/herohome-bg.svg'
+
+const useStyles = makeStyles((theme) => ({
+    hero_img: {
+        position: 'absolute',
+        bottom: '0px',
+        right: '0px',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'flex-end',
+        zIndex: '-1',
+        opacity: '0.4',
+        [theme.breakpoints.up('md')]: {
+            width: '50%',
+            opacity: '1',
+            alignItems: 'center'
+        },
+    },
+  }));
 
 const Hero = () =>{
     const data = useStaticQuery(graphql`
@@ -23,18 +43,19 @@ const Hero = () =>{
       }
     }
   `)
+    const siteData = data.site.siteMetadata;
+    const styles = {
+        hero: {
+            //backgroundImage: `url(${ImageBG})`,
+            //backgroundPosition: 'right',
+            //backgroundSize: '50%',
+            //backgroundRepeat: 'no-repeat',
+            height: '100vh',
+        },
+    };
 
-const styles = {
-    hero: {
-        backgroundImage: `url(${ImageBG})`,
-        backgroundPosition: 'right',
-        backgroundSize: '50%',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh',
-    }
-};
+    const classes = useStyles();
 
-const siteData = data.site.siteMetadata;
     return(
         <section id="hero-home">
                 <Container >
@@ -43,19 +64,24 @@ const siteData = data.site.siteMetadata;
                             <Typography variant="h1" ><Box fontWeight={800} >{siteData.title}</Box></Typography>
                             <Typography variant="body1" style={{maxWidth: '450px'}}>{siteData.subtitle}</Typography>
                         </Box>
-                        <Grid container spacing={3}>
-                            
+                        <Grid container spacing={3}>                           
                             <Grid item >
                                 <Button variant="contained"   color="primary">Zamów wyscenę</Button>
                             </Grid>
                             <Grid item >
                                 <Button variant="contained" color="secondary" >Dowiedz się więcej</Button>
                             </Grid>
-
-                            
-                            
-
                         </Grid>   
+                        <Box style={styles.hero_img} className={classes.hero_img}>
+                            <StaticImage
+                                src="../images/herohome-bg.svg"
+                                width={600}
+                                quality={95}
+                                formats={["AUTO", "WEBP", "AVIF"]}
+                                placeholder="none"
+                                alt="A Gatsby astronaut"
+                            />
+                        </Box>
                     </Box>
                 </Container>           
         </section>
