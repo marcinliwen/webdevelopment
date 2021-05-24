@@ -30,9 +30,14 @@ const useStyles = makeStyles((theme) => ({
             alignItems: 'center'
         },
     },
+    hero_noimg:{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        textAlign: 'center',
+    }
   }));
 
-const Hero = () =>{
+const Hero = (props) =>{
     const data = useStaticQuery(graphql`
     query SiteDataQuery {
       site {
@@ -52,6 +57,9 @@ const Hero = () =>{
             //backgroundRepeat: 'no-repeat',
             height: '100vh',
         },
+        hero_title :{
+            maxWidth: '800px',
+        }
     };
 
     const classes = useStyles();
@@ -60,19 +68,33 @@ const Hero = () =>{
         <section id="hero-home">
                 <Container >
                     <Box component="div" style={styles.hero}  display="flex" flexDirection="column" justifyContent="center">
-                        <Box mb={3} component="div" display="flex" flexDirection="column" justifyContent="center" style={{maxWidth: '800px'}}>
-                            <Typography variant="h1" ><Box fontWeight={800} >{siteData.title}</Box></Typography>
-                            <Typography variant="body1" style={{maxWidth: '450px'}}>{siteData.subtitle}</Typography>
+                        <Box 
+                            mb={3} 
+                            component="div" 
+                            display="flex" 
+                            flexDirection="column" 
+                            justifyContent="center" 
+                            style={styles.hero_title} 
+                            className={props.hero_image ? null : classes.hero_noimg } 
+                        >
+                            <Typography variant="h1" >{siteData.title}</Typography>
+                            <Typography 
+                                variant="body1" 
+                                style={{maxWidth: '450px'}}
+                                className={props.hero_image ? null : classes.hero_noimg } 
+                            >
+                                {siteData.subtitle}
+                            </Typography>
                         </Box>
-                        <Grid container spacing={3}>                           
+                        <Grid container spacing={3} justify={props.hero_image ? "left" : "center"}>                           
                             <Grid item >
-                                <Button variant="contained"   color="primary">Zamów wyscenę</Button>
+                                <Button variant="contained"   >Zamów wycenę</Button>
                             </Grid>
                             <Grid item >
-                                <Button variant="contained" color="secondary" >Dowiedz się więcej</Button>
+                                <Button variant="contained">Dowiedz się więcej</Button>
                             </Grid>
                         </Grid>   
-                        <Box style={styles.hero_img} className={classes.hero_img}>
+                        {props.hero_image ? <Box style={styles.hero_img} className={classes.hero_img}>
                             <StaticImage
                                 src="../images/herohome-bg.svg"
                                 width={600}
@@ -82,6 +104,8 @@ const Hero = () =>{
                                 alt="A Gatsby astronaut"
                             />
                         </Box>
+                        : null
+                        }
                     </Box>
                 </Container>           
         </section>

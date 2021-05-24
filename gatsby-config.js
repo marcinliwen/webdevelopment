@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Strony Internetowe`,
-    subtitle: 'Zamów stronę internetową, która bedzie nowoczesna, szybka, responsywna, widoczna w google.',
-    description: `Wytwarzam strony internetowe - projektuję i koduję strony internetowe dla firm, pomagam dzielić się informacją w internecie.`,
+    subtitle: 'Zamów stronę internetową, pokaż się światu, zdobądź nowych klientów i bądż na bierząco ze stałymi klientami.',
+    description: `Projektowanie i kodowanie strony internetowe dla firm, wizytówek, portfolio,.`,
     author: `Marcin Liweń`,
   },
   plugins: [
@@ -31,6 +31,19 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google2: [
+            {
+              family: "Work Sans",
+              axes: "wght@100..300;800", // multiple ranges are supported, ex: "wght@300..500;700..900"
+            },
+          ],
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
