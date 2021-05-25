@@ -38,7 +38,7 @@ module.exports = {
           google2: [
             {
               family: "Work Sans",
-              axes: "wght@100..300;800", // multiple ranges are supported, ex: "wght@300..500;700..900"
+              axes: "wght@100..300;700..900", // multiple ranges are supported, ex: "wght@300..500;700..900"
             },
           ],
         },

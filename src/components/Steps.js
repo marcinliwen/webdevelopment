@@ -23,10 +23,18 @@ import Sectiontitle from './sectiontitle'
 const useStyles = makeStyles((theme) => ({
     paper: {
       padding: '6px 16px',
+      height: '100%',
     },
     secondaryTail: {
       backgroundColor: theme.palette.secondary.main,
     },
+    gridItem:{
+        width: '100%',
+        flexWrap: 'wrap',
+        [theme.breakpoints.up('md')]: {
+            width: 'calc(100% / 5)',
+        }
+    }
   }));
 const steps = [
     {
@@ -34,7 +42,7 @@ const steps = [
         "desc" : "Powiedz o swojej wizji, pomysłach, inspiracjach. Razem ułożymay plan działania i projekt przyszłej strony."
     },
     {
-        "title" : "Projektowanie/ Kodowanie",
+        "title" : "Projek/ Kodowanie",
         "desc" : "Pracę rozpocznę od przygotowania testowej strony, zobaczysz wszystko na żywo i w akcji."
     },
     {
@@ -57,28 +65,23 @@ const Steps = () => {
         <section id="steps">
             <Container >
                 <Sectiontitle title='Jakie są etapy tworzenia strony internetowej?'/>
-                <Timeline align="alternate">
+                <Grid container spacing={2}>
                 {steps.map((item, index)=>
-                     <TimelineItem>
-                         <TimelineOppositeContent>
-                            <Typography variant="body2" color={`${index === 4 ? "secondary" :"textSecondary"}`} style={{fontSize: "112px", lineHeight: '112px'}}>
-                                {index + 1}
-                            </Typography>
-                        </TimelineOppositeContent>
-                        <TimelineSeparator>
-                            <TimelineDot color={`${index === 4 ? "secondary" :''}`}>
-                            </TimelineDot>
-                            <TimelineConnector className={`${index === 4 ? classes.secondaryTail : ''} `}/>
-                        </TimelineSeparator>
-                        <TimelineContent>
-                        <Paper elevation={3} className={classes.paper}>
-                            <Typography variant="h4">{item.title}</Typography>
-                            <Typography>{item.desc}</Typography>
+                     <Grid item className={classes.gridItem}  key={index}>
+                         <Paper elevation={3}  className={classes.paper}>
+                             <Box>
+                                <Typography variant="body2"  color={`${index === 3 ? "secondary" :"textSecondary"}`} style={{fontSize: "112px", lineHeight: '112px', marginRight: '16px', minWidth: '64px'}}>
+                                    {index + 1}
+                                </Typography>   
+                                <Box>
+                                    <Typography variant="h4">{item.title}</Typography>
+                                    <Typography>{item.desc}</Typography>
+                                </Box>   
+                             </Box>                 
                         </Paper>
-                        </TimelineContent> 
-                    </TimelineItem>         
+                    </Grid >         
                 )}
-                </Timeline>
+                </Grid>
             </Container>
         </section>
     )

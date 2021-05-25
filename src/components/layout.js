@@ -66,6 +66,12 @@ const Layout = ({ children }) => {
           },
           h2: {
             fontWeight: '100'
+          },
+          h4: {
+            marginBottom: '16px'
+          },
+          button: {
+            fontWeight: '900'
           }
         },
       }),
