@@ -22,7 +22,7 @@ import Sectiontitle from './sectiontitle'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-      padding: '6px 16px',
+      padding: '16px',
       height: '100%',
     },
     secondaryTail: {
