@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 
 const Sectiontitle = ({ title = 'Section title', subtitle}) => {
     return(
-        <Box component="div" mb={20} mt={20}>
+        <Box component="div" mb={4} mt={16}>
             <Typography variant="h2">{title}</Typography>
             <Typography variant='body1'>{subtitle}</Typography>
         </Box>

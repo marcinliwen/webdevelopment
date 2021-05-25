@@ -63,6 +63,9 @@ const Layout = ({ children }) => {
           fontFamily: 'Work Sans',
           h1:{
             fontWeight: '100'
+          },
+          h2: {
+            fontWeight: '100'
           }
         },
       }),
@@ -73,9 +76,9 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Switch checked={darkState} onChange={handleThemeChange} />
+      {/*<Switch checked={darkState} onChange={handleThemeChange} />*/}
 
-        <Header />      
+        <Header handleThemeChange={handleThemeChange} />      
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

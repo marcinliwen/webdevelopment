@@ -1,3 +1,6 @@
+/**
+ * jeżeli zmienna hero_image jest true - pokazuje obraz
+ */
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
@@ -77,7 +80,7 @@ const Hero = (props) =>{
                             style={styles.hero_title} 
                             className={props.hero_image ? null : classes.hero_noimg } 
                         >
-                            <Typography variant="h1" >{siteData.title}</Typography>
+                            <Typography variant="h1" style={{marginBottom: '42px'}}>{siteData.title}</Typography>
                             <Typography 
                                 variant="body1" 
                                 style={{maxWidth: '450px'}}

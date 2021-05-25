@@ -21,15 +21,15 @@ const specials = [
     },
     {
         "title" : "Szybkość",
-        "desc" : "Strona pojawi się zaraz po kliknięciu w link w wszukiwarce."
+        "desc" : "Nie daj klientom czekać na załadowanie się Twojej strony. Strona pojawi się zaraz po kliknięciu w link w wyszukiwarce."
     },
     {
         "title" : "Optymalizacja SEO",
-        "desc" : "Strona zaprojektowana tak aby ułatwić klientom odnalezienie treści z Twojej strony w wyszukiwarce Google."
+        "desc" : "Strona zaprojektowana tak aby ułatwić klientom odnalezienie Twojej strony w wyszukiwarce Google."
     },
     {
         "title" : "Bezpieczeństwo",
-        "desc" : "Zdobądź zaufanie klientów prezentując stronę szyfrowaną protokołem HTTPS."
+        "desc" : "Zdobądź zaufanie klientów prezentując stronę szyfrowaną protokołem HTTPS. Dzięki technologii serverless Twoja strona nigdy nie będzie zawirusowana."
     }
 ]
 

@@ -56,7 +56,7 @@ const Steps = () => {
     return(
         <section id="steps">
             <Container >
-                <Sectiontitle title='Jakie są etapy tworzenia strony internetowej.'/>
+                <Sectiontitle title='Jakie są etapy tworzenia strony internetowej?'/>
                 <Timeline align="alternate">
                 {steps.map((item, index)=>
                      <TimelineItem>
