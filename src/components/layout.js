@@ -72,7 +72,7 @@ const Layout = ({ children }) => {
           },
           button: {
             fontWeight: '900'
-          }
+          },
         },
       }),
     //[prefersDarkMode],

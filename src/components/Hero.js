@@ -94,7 +94,7 @@ const Hero = (props) =>{
                                 <Button variant="contained"   >Zamów wycenę</Button>
                             </Grid>
                             <Grid item >
-                                <Button variant="contained">Dowiedz się więcej</Button>
+                            <Link to="/#special" style={{textDecoration: 'none'}}><Button variant="contained">Dowiedz się więcej</Button></Link>
                             </Grid>
                         </Grid>   
                         {props.hero_image ? <Box style={styles.hero_img} className={classes.hero_img}>
