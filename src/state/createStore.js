@@ -12,7 +12,9 @@ const reducer = (state, action) => {
 }
 
 //sprawdza wartość w przeglądarce
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+const isBrowser = () => typeof window !== "undefined"
+
+const prefersDarkMode = isBrowser() && window.matchMedia('(prefers-color-scheme: dark)')
 
 const initialState = { count: prefersDarkMode.matches}
 
