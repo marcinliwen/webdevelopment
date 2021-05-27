@@ -87,7 +87,7 @@ const Hero = props => {
   //)
 
   const counter = useSelector(state => state.count)
-
+  console.log('Hero [counter]: ', counter)
   return (
     <section id="hero-home" className={counter ? "dark_bg" : "light_bg"}>
       <Container>

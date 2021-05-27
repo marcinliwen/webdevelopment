@@ -7,8 +7,10 @@ const reducer = (state, action) => {
     console.log('createState:[state.count]:', state.count)
     return Object.assign({}, state, {
       count: !state.count,
-    })
+    });
   }
+  console.log('createState:[state.count agfter]:', state.count)
+
   return state
 }
 
