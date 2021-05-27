@@ -16,7 +16,7 @@ const isBrowser = () => typeof window !== "undefined"
 
 const prefersDarkMode = isBrowser() && window.matchMedia('(prefers-color-scheme: dark)')
 
-const initialState = { count: !prefersDarkMode.matches}
+const initialState = { count: prefersDarkMode.matches}
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore
