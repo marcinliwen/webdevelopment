@@ -10,8 +10,6 @@ import Products from "../components/Products"
 import Steps from "../components/Steps"
 import Specials from "../components/Specials"
 
-
-
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
