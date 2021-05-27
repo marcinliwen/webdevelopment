@@ -49,13 +49,13 @@ const mapDispatchToProps = dispatch => {
 const Layout = ({ children, increment }) => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
 
-  console.log("prefered color:", prefersDarkMode)
+  //console.log("prefered color:", prefersDarkMode)
   const [darkState, setDarkState] = useState(!prefersDarkMode)
 
   const handleThemeChange = () => {
     setDarkState(!darkState)
     increment();
-    console.log(darkState)
+    //console.log(darkState)
   }
 
   let theme = React.useMemo(

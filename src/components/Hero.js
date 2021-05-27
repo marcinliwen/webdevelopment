@@ -80,11 +80,11 @@ const Hero = props => {
   const classes = useStyles()
 
   const theme = createMuiTheme()
-  console.log(theme)
-  console.log(
-    "what is color sceme",
-    useMediaQuery("(prefers-color-scheme: dark)")
-  )
+  //console.log(theme)
+  //console.log(
+  //  "what is color sceme",
+   // useMediaQuery("(prefers-color-scheme: dark)")
+  //)
 
   const counter = useSelector(state => state.count)
 
