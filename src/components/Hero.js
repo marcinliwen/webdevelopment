@@ -13,7 +13,6 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
 import {
   createMuiTheme,
   responsiveFontSizes,
@@ -66,30 +65,19 @@ const Hero = (props) => {
   const siteData = data.site.siteMetadata
   const styles = {
     hero: {
-      //backgroundImage: `url(${ImageBG})`,
-      //backgroundPosition: 'right',
-      //backgroundSize: '50%',
-      //backgroundRepeat: 'no-repeat',
       height: "100vh",
     },
     hero_title: {
       maxWidth: "800px",
     },
   }
-
   const classes = useStyles()
 
-  const theme = createMuiTheme()
-  //console.log(theme)
-  //console.log(
-  //  "what is color sceme",
-   // useMediaQuery("(prefers-color-scheme: dark)")
-  //)
-
-  //const counter = useSelector(state => state.count)
+  const isBrowser = () => typeof window !== "undefined"
+  const prefersDarkMode = isBrowser() && window.matchMedia('(prefers-color-scheme: dark)')
   console.log('Hero [counter]: ', props.count)
   return (
-    <section id="hero-home" className={props.count ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={props.count && prefersDarkMode.matches ? "dark_bg" : "light_bg"}>
       <Container>
         <Box
           component="div"

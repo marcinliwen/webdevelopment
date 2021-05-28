@@ -43,7 +43,7 @@ const mapStateToProps = ({ count }) => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return { increment: () => dispatch({ type: `INCREMENT` }) }
+  return { increment: () => dispatch({ type: `DARKMODE` }) }
 }
 
 const Layout = ({ children, increment }) => {

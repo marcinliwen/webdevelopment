@@ -3,20 +3,19 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 
 const reducer = (state, action) => {
-  if (action.type === `INCREMENT`) {
+  if (action.type === `DARKMODE`) {
     console.log('createState:[state.count]:', state.count)
     return Object.assign({}, state, {
       count: !state.count,
     });
   }
-  console.log('createState:[state.count agfter]:', state.count)
+  console.log('createState:[state.count after]:', state.count)
 
   return state
 }
 
 //sprawdza wartość w przeglądarce
 const isBrowser = () => typeof window !== "undefined"
-
 const prefersDarkMode = isBrowser() && window.matchMedia('(prefers-color-scheme: dark)')
 console.log('createState:[prefersDarkMode.matches]: ', prefersDarkMode.matches);
 const initialState = { count: prefersDarkMode.matches}
