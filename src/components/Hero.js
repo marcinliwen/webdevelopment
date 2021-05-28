@@ -3,6 +3,7 @@
  */
 import * as React from "react"
 import PropTypes from "prop-types"
+
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -13,6 +14,7 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/"
+import { useTheme } from '@material-ui/core/styles';
 import {
   createMuiTheme,
   responsiveFontSizes,
@@ -22,10 +24,6 @@ import {
 import ImageBG from "../images/herohome-bg.svg"
 import { connect , useSelector} from "react-redux"
 
-
-const mapStateToProps = ({ count }) => {
-  return { count }
-}
 
 const useStyles = makeStyles(theme => ({
   hero_img: {
@@ -73,11 +71,12 @@ const Hero = (props) => {
   }
   const classes = useStyles()
 
-  const isBrowser = () => typeof window !== "undefined"
-  const prefersDarkMode = isBrowser() && window.matchMedia('(prefers-color-scheme: dark)')
-  console.log('Hero [counter]: ', props.count)
+  const isDarkTheme = useTheme().palette.type === 'dark';
+  
+  console.log('Hero [isDarkTheme]: ', isDarkTheme)
+
   return (
-    <section id="hero-home" className={props.count && prefersDarkMode.matches ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"}>
       <Container>
         <Box
           component="div"
@@ -139,4 +138,4 @@ const Hero = (props) => {
   )
 }
 
-export default connect(mapStateToProps)(Hero)
+export default Hero
