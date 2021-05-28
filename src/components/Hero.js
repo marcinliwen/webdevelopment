@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Hero = props => {
+const Hero = (props) => {
   const data = useStaticQuery(graphql`
     query SiteDataQuery {
       site {
@@ -86,10 +86,10 @@ const Hero = props => {
    // useMediaQuery("(prefers-color-scheme: dark)")
   //)
 
-  const counter = useSelector(state => state.count)
-  console.log('Hero [counter]: ', counter)
+  //const counter = useSelector(state => state.count)
+  console.log('Hero [counter]: ', props.count)
   return (
-    <section id="hero-home" className={counter ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={props.count ? "dark_bg" : "light_bg"}>
       <Container>
         <Box
           component="div"
@@ -108,7 +108,7 @@ const Hero = props => {
             className={props.hero_image ? null : classes.hero_noimg}
           >
             <Typography variant="h1" style={{ marginBottom: "42px" }}>
-              {siteData.title}      {counter}
+              {siteData.title}
 
             </Typography>
             <Typography
