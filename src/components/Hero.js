@@ -72,9 +72,10 @@ const Hero = (props) => {
   const classes = useStyles()
 
   const isDarkTheme = useTheme().palette.type === 'dark';
-console.log('hero [isDarkTheme]', isDarkTheme)
+  console.log('hero [isDarkTheme]', isDarkTheme)
   return (
     <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"}>
+
       <Container>
         <Box
           component="div"
@@ -94,7 +95,7 @@ console.log('hero [isDarkTheme]', isDarkTheme)
           >
             <Typography variant="h1" style={{ marginBottom: "42px" }}>
               {siteData.title}
-
+{isDarkTheme ?'ciemny':'jasny'}
             </Typography>
             <Typography
               variant="body1"
