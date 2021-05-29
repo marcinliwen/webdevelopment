@@ -41,17 +41,17 @@ import "./layout.css"
 
 
 const Layout = ({ children }) => {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
 
-  console.log("prefered color:", prefersDarkMode)
-  const [darkState, setDarkState] = useState(false)
+  //pobiera wartość mediaquery gdy 'window' jest określony
+  const isBrowser = () => typeof window !== "undefined"
+  const isDarkMode = isBrowser() && window.matchMedia("(prefers-color-scheme: dark)");
+
+  const [darkState, setDarkState] = useState(isDarkMode.matches)
 
   const handleThemeChange = () => {
     setDarkState(!darkState)
-    console.log('what color theme? ', darkState)
   }
 
-  console.log('[darkState]:', darkState)
   let theme = React.useMemo(
     () =>
       createMuiTheme({
@@ -84,7 +84,7 @@ const Layout = ({ children }) => {
         <CssBaseline />
         {/*<Switch checked={darkState} onChange={handleThemeChange} />*/}
 
-        <Header handleThemeChange={handleThemeChange} />
+        <Header handleThemeChange={handleThemeChange} darkState={darkState}/>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
