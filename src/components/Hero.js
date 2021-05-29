@@ -72,7 +72,7 @@ const Hero = (props) => {
   const classes = useStyles()
 
   const isDarkTheme = useTheme().palette.type === 'dark';
-
+console.log('hero [isDarkTheme]', isDarkTheme)
   return (
     <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"}>
       <Container>

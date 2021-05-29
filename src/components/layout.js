@@ -46,6 +46,7 @@ const Layout = ({ children }) => {
   const isBrowser = () => typeof window !== "undefined"
   const isDarkMode = isBrowser() && window.matchMedia("(prefers-color-scheme: dark)");
 
+  console.log('layout [isDarkMode]:', isDarkMode);
   const [darkState, setDarkState] = useState(isDarkMode.matches)
 
   const handleThemeChange = () => {
