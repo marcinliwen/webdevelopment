@@ -3,7 +3,7 @@
  */
 import * as React from "react"
 import PropTypes from "prop-types"
-
+import {useState, useEffect} from 'react'
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -75,8 +75,18 @@ const Hero = (props) => {
 
   const isDarkTheme = useTheme().palette.type === 'dark';
   console.log('hero [isDarkTheme]', isDarkTheme)
+  console.log('[isDarkMode]:', isDarkMode.matches)
+
+  const [darkState, setDarkState] = useState(isDarkMode.matches);
+
+
+  useEffect(()=>{
+    setDarkState(isDarkTheme);
+  })
+
+
   return (
-    <section id="hero-home" className={isDarkMode && isDarkTheme ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={darkState ? "dark_bg" : "light_bg"}>
 
       <Container>
         <Box
