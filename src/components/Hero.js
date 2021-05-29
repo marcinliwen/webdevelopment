@@ -70,11 +70,13 @@ const Hero = (props) => {
     },
   }
   const classes = useStyles()
+  const isBrowser = () => typeof window !== "undefined"
+  const isDarkMode = isBrowser() && window.matchMedia("(prefers-color-scheme: dark)");
 
   const isDarkTheme = useTheme().palette.type === 'dark';
   console.log('hero [isDarkTheme]', isDarkTheme)
   return (
-    <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={isDarkMode && isDarkTheme ? "dark_bg" : "light_bg"}>
 
       <Container>
         <Box
