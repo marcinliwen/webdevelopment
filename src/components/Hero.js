@@ -77,7 +77,7 @@ const Hero = (props) => {
   console.log('hero [isDarkTheme]', isDarkTheme)
   console.log('[isDarkMode]:', isDarkMode.matches)
 
-  const [darkState, setDarkState] = useState(isDarkMode.matches);
+  const [darkState, setDarkState] = useState(true);
 
 
   useEffect(()=>{
@@ -107,7 +107,6 @@ const Hero = (props) => {
           >
             <Typography variant="h1" style={{ marginBottom: "42px" }}>
               {siteData.title}
-{isDarkTheme ?'ciemny':'jasny'}
             </Typography>
             <Typography
               variant="body1"
