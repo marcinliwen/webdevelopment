@@ -77,11 +77,12 @@ const Hero = (props) => {
   console.log('hero [isDarkTheme]', isDarkTheme)
   console.log('[isDarkMode]:', isDarkMode.matches)
 
-  const [darkState, setDarkState] = useState(!isDarkMode.matches);
+  const [darkState, setDarkState] = useState(isDarkMode.matches);
 
 
   useEffect(()=>{
     setDarkState(isDarkTheme);
+    console.log('useEffect work')
   })
 
 

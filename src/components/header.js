@@ -5,7 +5,7 @@ import Switch from "@material-ui/core/Switch"
 
 const Header = props => (
   <header style={{position: 'fixed', top: '0', zIndex: '999'}}>
-    <Switch checked ={props.darkState} onChange={props.handleThemeChange} />
+    <Switch checked={props.darkState} onChange={props.handleThemeChange} />
   </header>
 )
 
