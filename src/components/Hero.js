@@ -87,7 +87,7 @@ const Hero = (props) => {
 
 
   return (
-    <section id="hero-home" className={darkState ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"}>
 
       <Container>
         <Box
