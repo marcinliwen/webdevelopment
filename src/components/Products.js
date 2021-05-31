@@ -32,6 +32,10 @@ const products = [
       "Dodawaj artykuły i zdjęcia. Udostępniaj w mediach społecznościowych.",
   },
   {
+    title: "Coś innego?",
+    desc: "Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania."
+  },
+  {
     title: "Modernizacja",
     desc: "Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.",
   },
@@ -43,7 +47,7 @@ const Products = () => {
         <Sectiontitle title="Jakie strony wykonuję?" />
         <Grid container spacing={2}>
           {products.map((item, index) => (
-            <Grid item md={3} key={item} style={index === 4 ?{width: '100%', maxWidth: '100%', flex: '100%'}:{}}>
+            <Grid item md={3} key={item} style={index > 3 ?{width: '100%', maxWidth: '100%', flex: '100%'}:{}}>
               <Box p={4} boxShadow={2} style={{ height: "100%" }}>
                 <Typography variant="h4">{item.title}</Typography>
                 <Typography variant="body1">{item.desc}</Typography>

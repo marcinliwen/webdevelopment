@@ -70,24 +70,11 @@ const Hero = (props) => {
     },
   }
   const classes = useStyles()
-  const isBrowser = () => typeof window !== "undefined"
-  const isDarkMode = isBrowser() && window.matchMedia("(prefers-color-scheme: dark)");
 
   const isDarkTheme = useTheme().palette.type === 'dark';
-  console.log('hero [isDarkTheme]', isDarkTheme)
-  console.log('[isDarkMode]:', isDarkMode.matches)
-
-  const [darkState, setDarkState] = useState(isDarkMode.matches);
-
-
-  useEffect(()=>{
-    setDarkState(isDarkTheme);
-    console.log('useEffect work')
-  })
-
 
   return (
-    <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"}>
+    <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"} style={{padding: '0px'}}>
 
       <Container>
         <Box
@@ -123,7 +110,7 @@ const Hero = (props) => {
             justify={props.hero_image ? "left" : "center"}
           >
             <Grid item>
-              <Button variant="contained">Zamów wycenę</Button>
+              <Button variant="contained">Zamów stronę</Button>
             </Grid>
             <Grid item>
               <Link to="/#special" style={{ textDecoration: "none" }}>

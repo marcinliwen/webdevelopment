@@ -46,8 +46,8 @@ const Layout = ({ children }) => {
   const isBrowser = () => typeof window !== "undefined"
   const isDarkMode = isBrowser() && window.matchMedia("(prefers-color-scheme: dark)");
 
-  console.log('layout [isDarkMode]:', isDarkMode);
-  const [darkState, setDarkState] = useState(isDarkMode.matches)
+  //console.log('layout [isDarkMode]:', isDarkMode);
+  const [darkState, setDarkState] = useState(false)
 
   const handleThemeChange = () => {
     setDarkState(!darkState)
@@ -84,8 +84,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {/*<Switch checked={darkState} onChange={handleThemeChange} />*/}
-
-        <Header handleThemeChange={handleThemeChange} darkState={darkState}/>
+        <Header handleThemeChange={handleThemeChange} darkState={darkState} />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
