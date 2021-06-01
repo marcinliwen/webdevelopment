@@ -8,7 +8,9 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Link from '@material-ui/core/Link';
+import Paper from "@material-ui/core/Paper"
 import { useTheme } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
 
 import Sectiontitle from "./sectiontitle"
@@ -33,8 +35,23 @@ const realisations = [
     link: "https://multi03.netlify.app/",
     },
 ]
+const useStyles = makeStyles(theme => ({
+  gridItem: {
+    width: "100%",
+    flexWrap: "wrap",
+    [theme.breakpoints.up("md")]: {
+      width: "calc(100% / 5)",
+    },
+  },
+  paper: {
+    padding: "16px",
+    height: "100%",
+  },
+}))
+
 const Realisations = () => {
   const isDarkTheme = useTheme().palette.type === 'dark';
+  const classes = useStyles()
 
   return (
     <section id="realisations" className={isDarkTheme ? "dark_bg" : "light_bg"}>
@@ -43,11 +60,13 @@ const Realisations = () => {
         <Grid container spacing={2}>
           {realisations.map((item, index) => (
             <Grid item md={6} key={item} style={index > 3 ?{width: '100%', maxWidth: '100%', flex: '100%'}:{}}>
-              <Box p={4} boxShadow={2} style={{ height: "100%" }}>
-                <Typography variant="h4">{item.title}</Typography>
-                <Typography variant="body1">{item.desc}</Typography>
-                <Link variant="body1"  href={item.link} target="_blank" rel="noreferrer">{item.title}</Link>
-              </Box>
+              <Paper elevation={3} className={classes.paper}>
+                <Box p={4}  style={{ height: "100%" }}>
+                  <Typography variant="h4">{item.title}</Typography>
+                  <Typography variant="body1">{item.desc}</Typography>
+                  <Link variant="body1"  href={item.link} target="_blank" rel="noreferrer">{item.title}</Link>
+                </Box>
+              </Paper>
             </Grid>
           ))}
         </Grid>
