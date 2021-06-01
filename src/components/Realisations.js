@@ -25,13 +25,13 @@ const realisations = [
   {
     title: "AnimalVet",
     desc:
-      "Strona Firmowa. Strona prezentuje gabinet weterynaryjny, kategorie usług, opis gabinetu i lekarzy, lokalizację w Mamach Google, formularz kontaktowy i newsletter. ",
+      "Strona Firmowa. Strona prezentuje gabinet weterynaryjny, kategorie usług, opis gabinetu i lekarzy, lokalizację w Mamach Google, formularz kontaktowy i newsletter, strona dwujęzyczna. ",
     link:"https://animalvettest.netlify.app/",
     },
   {
     title: "Kaja Dekor",
     desc:
-      "Strona firmowa. Strona prezentuje usługi firmy dekoracyjnej, skupia się na rozbudowanej galerii zdjęć z realizacji.",
+      "Strona firmowa. Strona prezentuje usługi firmy dekoracyjnej, skupia się na rozbudowanej galerii zdjęć z realizacji. Dodany moduł CMS do łatwego uzupełniania treści i zdjęć, dwu języczna strona, lokalizacja w Mapach Google.",
     link: "https://multi03.netlify.app/",
     },
 ]
