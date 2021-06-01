@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Link from '@material-ui/core/Link';
+import { useTheme } from '@material-ui/core/styles';
+
 
 import Sectiontitle from "./sectiontitle"
 
@@ -32,8 +34,10 @@ const realisations = [
     },
 ]
 const Realisations = () => {
+  const isDarkTheme = useTheme().palette.type === 'dark';
+
   return (
-    <section id="realisations">
+    <section id="realisations" className={isDarkTheme ? "dark_bg" : "light_bg"}>
       <Container>
         <Sectiontitle title="Zrealizowane projekty" />
         <Grid container spacing={2}>

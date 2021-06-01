@@ -24,6 +24,8 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: "16px",
     height: "100%",
+    position: "relative",
+    overflow: "hidden",
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
@@ -35,6 +37,22 @@ const useStyles = makeStyles(theme => ({
       width: "calc(100% / 5)",
     },
   },
+  number:{
+    fontSize: "29rem",
+    fontFamily: "Work Sans",
+    fontWeight: "900",
+    zIndex: "0",
+    position: "absolute",
+    opacity: "0.1",
+    lineHeight: "273px",
+    top: "0",
+    right: "0px",
+    [theme.breakpoints.up("md")]: {
+      left: "0",
+      right: "auto"
+
+    },
+  }
 }))
 const steps = [
   {
@@ -75,19 +93,22 @@ const Steps = () => {
               <Paper elevation={3} className={classes.paper}>
                 <Box>
                   <Typography
-                    variant="body2"
-                    color={`${index === 3 ? "secondary" : "textSecondary"}`}
+                    color={`${index === 3 ? "secondary" : ""}`}
+                    className={classes.number}
                     style={{
-                      fontSize: "112px",
-                      lineHeight: "112px",
-                      marginRight: "16px",
-                      minWidth: "64px",
+                      
                     }}
                   >
                     {index + 1}
                   </Typography>
                   <Box>
-                    <Typography variant="h4">{item.title}</Typography>
+                    <Typography 
+                      color={`${index === 3 ? "secondary" : ""}`} 
+                      variant="h4"
+                      style={{marginBottom: "32px", minHeight: "90px"}}
+                    >
+                      {item.title}  
+                    </Typography>
                     <Typography>{item.desc}</Typography>
                   </Box>
                 </Box>
