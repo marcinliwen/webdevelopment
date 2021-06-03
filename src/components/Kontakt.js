@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid"
 import { useTheme } from "@material-ui/core/styles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Sectiontitle from "./sectiontitle"
-import KontaktForm from "./kontaktForm"
+import KontaktForm from "./KontaktForm"
 
 const Kontakt = () => {
   const theme = useTheme()
