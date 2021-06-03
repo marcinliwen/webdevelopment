@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
       width: "calc(100% / 5)",
     },
   },
-  number:{
+  number: {
     fontSize: "29rem",
     fontFamily: "Work Sans",
     fontWeight: "900",
@@ -49,10 +49,9 @@ const useStyles = makeStyles(theme => ({
     right: "0px",
     [theme.breakpoints.up("md")]: {
       left: "0",
-      right: "auto"
-
+      right: "auto",
     },
-  }
+  },
 }))
 const steps = [
   {
@@ -95,19 +94,17 @@ const Steps = () => {
                   <Typography
                     color={`${index === 3 ? "secondary" : ""}`}
                     className={classes.number}
-                    style={{
-                      
-                    }}
+                    style={{}}
                   >
                     {index + 1}
                   </Typography>
                   <Box>
-                    <Typography 
-                      color={`${index === 3 ? "secondary" : ""}`} 
+                    <Typography
+                      color={`${index === 3 ? "secondary" : ""}`}
                       variant="h4"
-                      style={{marginBottom: "32px", minHeight: "90px"}}
+                      style={{ marginBottom: "32px", minHeight: "90px" }}
                     >
-                      {item.title}  
+                      {item.title}
                     </Typography>
                     <Typography>{item.desc}</Typography>
                   </Box>

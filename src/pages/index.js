@@ -10,7 +10,7 @@ import Products from "../components/Products"
 import Steps from "../components/Steps"
 import Specials from "../components/Specials"
 import Realisations from "../components/Realisations"
-
+import Kontakt from "../components/Kontakt"
 
 const IndexPage = () => (
   <Layout>
@@ -21,6 +21,7 @@ const IndexPage = () => (
     <Steps />
     <Realisations />
     <About />
+    <Kontakt />
   </Layout>
 )
 

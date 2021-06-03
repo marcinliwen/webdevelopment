@@ -3,7 +3,7 @@
  */
 import * as React from "react"
 import PropTypes from "prop-types"
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -14,7 +14,7 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import { makeStyles } from "@material-ui/core/"
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme } from "@material-ui/core/styles"
 import {
   createMuiTheme,
   responsiveFontSizes,
@@ -22,8 +22,7 @@ import {
 } from "@material-ui/core/styles"
 
 import ImageBG from "../images/herohome-bg.svg"
-import { connect , useSelector} from "react-redux"
-
+import { connect, useSelector } from "react-redux"
 
 const useStyles = makeStyles(theme => ({
   hero_img: {
@@ -49,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Hero = (props) => {
+const Hero = props => {
   const data = useStaticQuery(graphql`
     query SiteDataQuery {
       site {
@@ -71,11 +70,14 @@ const Hero = (props) => {
   }
   const classes = useStyles()
 
-  const isDarkTheme = useTheme().palette.type === 'dark';
+  const isDarkTheme = useTheme().palette.type === "dark"
 
   return (
-    <section id="hero-home" className={isDarkTheme ? "dark_bg" : "light_bg"} style={{padding: '0px'}}>
-
+    <section
+      id="hero-home"
+      className={isDarkTheme ? "dark_bg" : "light_bg"}
+      style={{ padding: "0px" }}
+    >
       <Container>
         <Box
           component="div"

@@ -10,34 +10,27 @@ import Grid from "@material-ui/core/Grid"
 import { useTheme } from "@material-ui/core/styles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Sectiontitle from "./sectiontitle"
-import DeveloperAnimate from "../assets/developer-animate.svg"
+import KontaktForm from "./kontaktForm"
 
-const about = {
-  title: "Poznajmy się.",
-  desc:
-    "Cześć! Mam na imię Marcin, jestem webdeveloperem. Projektuję i tworzę strony internetowe. Tworzeniem aplikacji webowych zajmuję się od 2018 roku. Pracowałem z technologiami: PHP, MSQL, jQuery, JavaScript, HTML, CSS, React, Gatsby, GraphQL, Prestashop, Wordpress, Netlify. Obecnie pracuję jako freelancer, żeby mieć więcej czasu na inne zainteresowania. Pomogę Ci wprowadzić Twój biznes do internetu.",
-}
-
-const style = {
-  text: {
-    maxWidth: "40%",
-  },
-  img: {
-    maxWidth: "50%",
-    width: "100%",
-    marginLeft: "auto",
-  },
-  img_sm: {
-    width: "100%",
-  },
-}
-
-const About = () => {
+const Kontakt = () => {
   const theme = useTheme()
   const match_md = useMediaQuery(theme.breakpoints.up("md"))
 
+  const style = {
+    text: {
+      maxWidth: "50%",
+    },
+    img: {
+      maxWidth: "50%",
+      width: "100%",
+      marginLeft: "auto",
+    },
+    img_sm: {
+      width: "100%",
+    },
+  }
   return (
-    <section id="realisations">
+    <section id="kontakt">
       <Container>
         <Box display="flex" flexWrap="wrap">
           <Box
@@ -47,11 +40,13 @@ const About = () => {
             alignItems="flex-start"
             justifyContent="center"
           >
-            <Typography variant="h2">{about.title}</Typography>
-            <Typography variant="body1">{about.desc}</Typography>
+            <Typography variant="h2">Napisz do mnie</Typography>
+            <Typography variant="body1">
+              Masz pytanie? Chciałbyś wiedzieć więcej?
+            </Typography>
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
-            <DeveloperAnimate />
+            <KontaktForm />
           </Box>
         </Box>
       </Container>
@@ -59,4 +54,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Kontakt

@@ -6,7 +6,7 @@
  */
 
 import * as React from "react"
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react"
 
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -39,12 +39,11 @@ import "./layout.css"
 });
 */
 
-
 const Layout = ({ children }) => {
-
   //pobiera wartość mediaquery gdy 'window' jest określony
   const isBrowser = () => typeof window !== "undefined"
-  const isDarkMode = isBrowser() && window.matchMedia("(prefers-color-scheme: dark)");
+  const isDarkMode =
+    isBrowser() && window.matchMedia("(prefers-color-scheme: dark)")
 
   //console.log('layout [isDarkMode]:', isDarkMode);
   const [darkState, setDarkState] = useState(false)
@@ -73,8 +72,7 @@ const Layout = ({ children }) => {
           button: {
             fontWeight: "900",
           },
-        }
-        
+        },
       })
     //[prefersDarkMode],
   )
@@ -100,4 +98,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout;
+export default Layout

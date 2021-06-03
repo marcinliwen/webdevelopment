@@ -7,7 +7,8 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
-
+import ExtraFeatures from "./ExtraFeatures"
+import FeaturesList from "./FeaturesList"
 import Sectiontitle from "./sectiontitle"
 
 const products = [
@@ -15,29 +16,71 @@ const products = [
     title: "Strona firmowa",
     desc:
       "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafić, jakie produkty lub usługi oferujesz.",
+    features: [
+      "do 5 podstron",
+      "responsywność RWD",
+      "formularz kontaktowy",
+      "Google Analitics",
+      "optymalizacja SEO",
+      "integracja Google Maps",
+      "certyfikat SSL",
+      "projekt oparty na szablonie + zdjęcia stockowe",
+      "wsparcie techniczne",
+    ],
+    extra_features: [
+      "do 10 podstron",
+      "powyżej 10 podstron",
+      "system CMS Netlify/Strapi/WordPress",
+      "formularz newslettera",
+      "moduł bloga, aktualności",
+      "dodatowy język na stronie",
+      "indywidualny projekt graficzny + zdjęcia stockowe",
+      "Copywriting - pomoc w dostarczeniu treści na stronę",
+      "integracja Facebook: Messenger na stronie",
+    ],
   },
   {
     title: "Landing Page",
     desc:
       "Zaprezentuj swój produkt, usługę i wydażenie. Strona pokazuje zalety i atuty produktu, pokazuje detale. W krutki i przejrzysty sposób.",
+
+    features: [
+      "strona one page",
+      "responsywność RWD",
+      "formularz kontaktowy",
+      "Google Analitics",
+      "optymalizacja SEO",
+      "integracja Google Maps",
+      "certyfikat SSL",
+      "projekt oparty na szablonie + zdjęcia stockowe",
+      "wsparcie techniczne",
+    ],
   },
   {
     title: "Portfolio",
     desc:
       "Tu możesz pokazać swoje prace w galerii zdjęć, poinformować o aktualnościach lub o najbliższym wydarzeniu.",
-  },
-  {
-    title: "Blog",
-    desc:
-      "Dodawaj artykuły i zdjęcia. Udostępniaj w mediach społecznościowych.",
+    features: [
+      "do 5 podstron",
+      "responsywność RWD",
+      "formularz kontaktowy",
+      "Google Analitics",
+      "optymalizacja SEO",
+      "integracja Google Maps",
+      "certyfikat SSL",
+      "projekt oparty na szablonie + zdjęcia stockowe",
+      "wsparcie techniczne",
+    ],
   },
   {
     title: "Coś innego?",
-    desc: "Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania."
+    desc:
+      "Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.",
   },
   {
     title: "Modernizacja",
-    desc: "Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.",
+    desc:
+      "Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.",
   },
 ]
 const Products = () => {
@@ -47,10 +90,23 @@ const Products = () => {
         <Sectiontitle title="Jakie strony wykonuję?" />
         <Grid container spacing={2}>
           {products.map((item, index) => (
-            <Grid item md={3} key={item} style={index > 3 ?{width: '100%', maxWidth: '100%', flex: '100%'}:{}}>
-              <Box p={4} boxShadow={2} style={{ height: "100%" }}>
-                <Typography variant="h4">{item.title}</Typography>
-                <Typography variant="body1">{item.desc}</Typography>
+            <Grid
+              item
+              md={4}
+              key={item}
+              style={
+                index > 2
+                  ? { width: "100%", maxWidth: "100%", flex: "100%" }
+                  : {}
+              }
+            >
+              <Box boxShadow={2} style={{ height: "100%" }}>
+                <Box p={4}>
+                  <Typography variant="h4">{item.title}</Typography>
+                  <Typography variant="body1">{item.desc}</Typography>
+                </Box>
+                <FeaturesList features={item.features} />
+                <ExtraFeatures features={item.extra_features} />
               </Box>
             </Grid>
           ))}
