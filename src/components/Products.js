@@ -13,7 +13,7 @@ import Sectiontitle from "./sectiontitle"
 
 const products = [
   {
-    title: "Landing Page",
+    title: "Basic",
     desc:
       "Zaprezentuj swój produkt, usługę lub wydarzenie od najlepszej strony. W krótki i przejrzysty sposób pokaż zalety, detale i najważniejsze informacje. Idealne rozwiązanie jako strona wizytówka firmy, produktu lub wydarzenia.",
 
@@ -33,7 +33,7 @@ const products = [
     price: "1000"
   },
   {
-    title: "Strona firmowa",
+    title: "Advanced",
     desc:
       "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafi. Pokaż produkty, usługi lub swoje prace w rozbudowanej galerii. Idealne rozwiązanie dla stron firmowych z cennikiem i opisem usług, stron portfolio z galerią zdjęć lub filmów, kalendarzem, stron osobistych.  ",
     features: [
@@ -63,9 +63,9 @@ const products = [
     price: "1500"
   },
   {
-    title: "Strona firmowa extra",
+    title: "Advanced Extra",
     desc:
-      "Ten pakiet zawiera wszystko to co 'Strona firmowa'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
+      "Ten pakiet zawiera wszystko to co 'Advanced'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
     features: [
       {title:"powyżej 5 podstron", active: true},
       {title:"responsywność RWD", active: true},
@@ -101,8 +101,8 @@ const Products = () => {
             >
               <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box p={3}>
-                  <Typography variant="h4" style={{minHeight: "90px", marginBottom: "32px"}} gutterBottom>{item.title}</Typography>
-                  <Typography variant="body1">{item.desc}</Typography>
+                  <Typography variant="h4" style={{marginBottom: "32px"}} gutterBottom>{item.title}</Typography>
+                  <Typography variant="body1" style={{fontSize: "16px"}}>{item.desc}</Typography>
                 </Box>
                 <FeaturesList features={item.features} />
                 <Box p={2} fontSize="44px" textAlign="center">{item.price} PLN</Box>

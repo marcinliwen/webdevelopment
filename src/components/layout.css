@@ -621,6 +621,5 @@ pre tt:after {
 
 section {
   min-height: 100vh;
-  padding-top: 128px;
-  padding-bottom: 128px;
+  padding-top: 64px;
 }
