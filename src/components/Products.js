@@ -13,19 +13,41 @@ import Sectiontitle from "./sectiontitle"
 
 const products = [
   {
+    title: "Landing Page",
+    desc:
+      "Zaprezentuj swój produkt, usługę lub wydarzenie od najlepszej strony. W krótki i przejrzysty sposób pokaż zalety, detale i najważniejsze informacje. Idealne rozwiązanie jako strona wizytówka firmy, produktu lub wydarzenia.",
+
+    features: [
+      {title:"wszystkie informacje na jednej stronie", active: true},
+      {title:"responsywność RWD", active: true},
+      {title: "formularz kontaktowy", active: true},
+      {title: "formularz newslettera", active:false},
+      {title: "Google Analitics", active: true},
+      {title: "optymalizacja SEO", active: true},
+      {title: "certyfikat SSL", active: true},
+      {title: "moduł bloga, aktualności", active:false},
+      {title: "prosty w obsłudze system CMS Netlify/Strapi (szkolenie online)", active: false},
+      {title: "projekt oparty na szablonie + zdjęcia stockowe", active: true},
+      {title: "wsparcie techniczne", active: true}
+    ],
+    price: "1000"
+  },
+  {
     title: "Strona firmowa",
     desc:
-      "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafić, jakie produkty lub usługi oferujesz.",
+      "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafi. Pokaż produkty, usługi lub swoje prace w rozbudowanej galerii. Idealne rozwiązanie dla stron firmowych z cennikiem i opisem usług, stron portfolio z galerią zdjęć lub filmów, kalendarzem, stron osobistych.  ",
     features: [
-      "do 5 podstron",
-      "responsywność RWD",
-      "formularz kontaktowy",
-      "Google Analitics",
-      "optymalizacja SEO",
-      "integracja Google Maps",
-      "certyfikat SSL",
-      "projekt oparty na szablonie + zdjęcia stockowe",
-      "wsparcie techniczne",
+      {title:"do 5 podstron", active:true},
+      {title:"responsywność RWD", active: true},
+      {title: "formularz kontaktowy", active: true},
+      {title: "formularz newslettera", active:false},
+      {title: "Google Analitics", active: true},
+      {title: "optymalizacja SEO", active: true},
+      {title: "certyfikat SSL", active: true},
+      {title: "moduł bloga, aktualności", active:false},
+      {title: "prosty w obsłudze system CMS Netlify/Strapi (szkolenie online)", active: false},
+      {title: "projekt oparty na szablonie + zdjęcia stockowe", active: true},
+      {title: "wsparcie techniczne", active: true}
     ],
     extra_features: [
       "do 10 podstron",
@@ -38,49 +60,26 @@ const products = [
       "Copywriting - pomoc w dostarczeniu treści na stronę",
       "integracja Facebook: Messenger na stronie",
     ],
+    price: "1500"
   },
   {
-    title: "Landing Page",
+    title: "Strona firmowa extra",
     desc:
-      "Zaprezentuj swój produkt, usługę i wydażenie. Strona pokazuje zalety i atuty produktu, pokazuje detale. W krutki i przejrzysty sposób.",
-
+      "Ten pakiet zawiera wszystko to co 'Strona firmowa'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
     features: [
-      "strona one page",
-      "responsywność RWD",
-      "formularz kontaktowy",
-      "Google Analitics",
-      "optymalizacja SEO",
-      "integracja Google Maps",
-      "certyfikat SSL",
-      "projekt oparty na szablonie + zdjęcia stockowe",
-      "wsparcie techniczne",
+      {title:"powyżej 5 podstron", active: true},
+      {title:"responsywność RWD", active: true},
+      {title: "formularz kontaktowy", active: true},
+      {title: "formularz newslettera", active: true},
+      {title: "Google Analitics", active: true},
+      {title: "optymalizacja SEO", active: true},
+      {title: "certyfikat SSL", active: true},
+      {title: "moduł bloga, aktualności", active: true},
+      {title: "prosty w obsłudze system CMS Netlify/Strapi (szkolenie online)", active: true},
+      {title: "projekt oparty na szablonie + zdjęcia stockowe", active: true},
+      {title: "wsparcie techniczne", active: true}
     ],
-  },
-  {
-    title: "Portfolio",
-    desc:
-      "Tu możesz pokazać swoje prace w galerii zdjęć, poinformować o aktualnościach lub o najbliższym wydarzeniu.",
-    features: [
-      "do 5 podstron",
-      "responsywność RWD",
-      "formularz kontaktowy",
-      "Google Analitics",
-      "optymalizacja SEO",
-      "integracja Google Maps",
-      "certyfikat SSL",
-      "projekt oparty na szablonie + zdjęcia stockowe",
-      "wsparcie techniczne",
-    ],
-  },
-  {
-    title: "Coś innego?",
-    desc:
-      "Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.",
-  },
-  {
-    title: "Modernizacja",
-    desc:
-      "Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.",
+    price: "2000"
   },
 ]
 const Products = () => {
@@ -100,17 +99,53 @@ const Products = () => {
                   : {}
               }
             >
-              <Box boxShadow={2} style={{ height: "100%" }}>
-                <Box p={4}>
-                  <Typography variant="h4">{item.title}</Typography>
+              <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
+                <Box p={3}>
+                  <Typography variant="h4" style={{minHeight: "90px", marginBottom: "32px"}} gutterBottom>{item.title}</Typography>
                   <Typography variant="body1">{item.desc}</Typography>
                 </Box>
                 <FeaturesList features={item.features} />
-                <ExtraFeatures features={item.extra_features} />
+                <Box p={2} fontSize="44px" textAlign="center">{item.price} PLN</Box>
+                <Box p={2} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap">
+                  <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+                  <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
+                </Box>
               </Box>
             </Grid>
           ))}
         </Grid>
+        <Box mt={4}>
+
+        
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+          <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
+            <Box p={3}>
+              <Typography variant="h4" style={{minHeight: "90px", marginBottom: "32px"}} gutterBottom>Coś inneg?</Typography>
+              <Typography variant="body1">Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
+            </Box>
+            <Box p={2} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap">
+              <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+              <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
+            </Box>
+          </Box>
+          </Grid>
+          <Grid item xs={12}>
+          <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
+            <Box p={3}>
+              <Typography variant="h4" style={{minHeight: "90px", marginBottom: "32px"}} gutterBottom>Modernizacja</Typography>
+              <Typography variant="body1">Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.</Typography>
+            </Box>
+            <Box p={2} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap">
+              <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+              <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
+            </Box>
+          </Box>
+          </Grid>
+        </Grid>
+        </Box>
+        
+        
       </Container>
     </section>
   )

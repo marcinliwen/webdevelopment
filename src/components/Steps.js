@@ -92,7 +92,7 @@ const Steps = () => {
               <Paper elevation={3} className={classes.paper}>
                 <Box>
                   <Typography
-                    color={`${index === 3 ? "secondary" : ""}`}
+                    color={`${index === 3 ? "secondary" : "initial"}`}
                     className={classes.number}
                     style={{}}
                   >

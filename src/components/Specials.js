@@ -63,7 +63,7 @@ const Special = () => {
   return (
     <section id="special">
       <Container>
-        <Sectiontitle title="Jaka powinna być dobra strona?" />
+        <Sectiontitle title="Jaka będzie Twoja przyszła strona?" />
         <Grid container spacing={2}>
           {specials.map(item => (
             <Grid item className={classes.gridItem} key={item}>

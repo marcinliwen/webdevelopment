@@ -14,6 +14,8 @@ import { green } from "@material-ui/core/colors"
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
+    marginTop: "auto"
+
     // backgroundColor: theme.palette.background.paper,
   },
   itemlist: {
@@ -21,9 +23,15 @@ const useStyles = makeStyles(theme => ({
   },
   itemText: {
     "& span": {
-      fontSize: "12px",
+      fontSize: "16px",
     },
   },
+  itemTExtFirst:{
+    "& span": {
+        fontWeight: "600",
+        fontSize: "16px",
+      },
+  }
 }))
 
 export default function CheckboxList({ features }) {
@@ -57,14 +65,15 @@ export default function CheckboxList({ features }) {
               dense
               button
               onClick={handleToggle(index)}
+              disabled={value.active ? false : true}            
             >
               <ListItemIcon style={{ minWidth: "24px" }}>
                 <CheckIcon style={{ color: green[500], fontSize: "18px" }} />
               </ListItemIcon>
               <ListItemText
                 id={labelId}
-                primary={value}
-                className={classes.itemText}
+                primary={value.title}
+                className={index=== 0 ? classes.itemTExtFirst : classes.itemText}
               />
             </ListItem>
           )

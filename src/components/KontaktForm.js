@@ -126,8 +126,8 @@ export default function Contact() {
             style={{color:"rgb(240, 56, 0)"}}
           />
         </Grid>
-        <Grid item xs={12}>
-          <Button variant="contained" color="primary">
+        <Grid item xs={12} style={{display: "flex"}}>
+          <Button variant="contained" color="primary" style={{marginLeft: "auto"}}>
             Wyślij
           </Button>
         </Grid>
