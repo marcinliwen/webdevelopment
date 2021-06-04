@@ -70,7 +70,7 @@ const Realisations = () => {
             >
               <Paper elevation={3} className={classes.paper}>
                 <Box p={4} style={{ height: "100%" }}>
-                  <Typography variant="h4">{item.title}</Typography>
+                  <Typography variant="h4" style={{wordBreak: "break-word"}}>{item.title}</Typography>
                   <Typography variant="body1">{item.desc}</Typography>
                   <Link
                     variant="body1"

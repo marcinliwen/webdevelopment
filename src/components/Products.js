@@ -118,27 +118,25 @@ const Products = () => {
 
         
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={12} md={6}>
           <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
             <Box p={3}>
-              <Typography variant="h4" style={{minHeight: "90px", marginBottom: "32px"}} gutterBottom>Coś inneg?</Typography>
+              <Typography variant="h4" style={{marginBottom: "32px"}} gutterBottom>Coś inneg?</Typography>
               <Typography variant="body1">Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
             </Box>
-            <Box p={2} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap">
+            <Box p={2} textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
               <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
-              <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
             </Box>
           </Box>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} md={6}>
           <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
             <Box p={3}>
-              <Typography variant="h4" style={{minHeight: "90px", marginBottom: "32px"}} gutterBottom>Modernizacja</Typography>
+              <Typography variant="h4" style={{marginBottom: "32px"}} gutterBottom>Modernizacja</Typography>
               <Typography variant="body1">Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.</Typography>
             </Box>
-            <Box p={2} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap">
+            <Box p={2} textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
               <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
-              <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
             </Box>
           </Box>
           </Grid>

@@ -23,7 +23,7 @@ const Header = props => {
       <Box style={SwitchStyle}>
         <Switch checked={props.darkState} onChange={props.handleThemeChange} />
       </Box>
-      {match_md ? null : <MobileMenu />}
+      {/*match_md ? null : <MobileMenu />*/}
     </header>
   )
 }
