@@ -62,6 +62,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: "24px",
       padding: "8px 16px",
       flexGrow: "1",
+      borderRadius: "0"
     },
   }
 }))
