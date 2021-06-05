@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Strony Internetowe`,
     subtitle:
-      "Zamów stronę internetową dla swojej firmy, stronę osobistą, stronę wizytówkę, portfolio lub blog, zdobądź nowych klientów i bądź na bierząco ze stałymi klientami, w przystępnej cenie.",
-    description: `Projektowanie i kodowanie strony internetowe dla firm, wizytówek, portfolio.`,
+      "Zamów stronę internetową, zdobądź nowych klientów i bądź na bierząco ze stałymi klientami, w przystępnej cenie.",
+    description: `Projektowanie i kodowanie stron internetowych dla firm, osobistych, wizytówek, portfolio.`,
     author: `Marcin Liweń`,
   },
   plugins: [

@@ -64,6 +64,7 @@ export default function CheckboxList({ features }) {
               role={undefined}
               dense
               button
+              disableGutters={true}
               onClick={handleToggle(index)}
               disabled={value.active ? false : true}            
             >

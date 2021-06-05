@@ -15,7 +15,7 @@ import DeveloperAnimate from "../assets/developer-animate.svg"
 const about = {
   title: "Poznajmy się.",
   desc:
-    "Cześć! Mam na imię Marcin, jestem webdeveloperem. Projektuję i tworzę strony internetowe. Tworzeniem aplikacji webowych zajmuję się od 2018 roku. Pracowałem z technologiami: PHP, MSQL, jQuery, JavaScript, HTML, CSS, React, Gatsby, GraphQL, Prestashop, Wordpress, Netlify. Obecnie pracuję jako freelancer, żeby mieć więcej czasu na inne zainteresowania. Pomogę Ci wprowadzić Twój biznes do internetu.",
+    "Projektuję i tworzę strony internetowe. Tworzeniem aplikacji webowych zajmuję się od 2018 roku. Pracowałem z technologiami: PHP, MSQL, jQuery, JavaScript, HTML, CSS, React, Gatsby, GraphQL, Prestashop, Wordpress, Netlify. Obecnie pracuję jako freelancer, żeby mieć więcej czasu na inne zainteresowania.",
 }
 
 const style = {
@@ -47,8 +47,18 @@ const About = () => {
             alignItems="flex-start"
             justifyContent="center"
           >
-            <Typography variant="h2">{about.title}</Typography>
-            <Typography variant="body1">{about.desc}</Typography>
+            <Box mb={4}>
+              <Typography variant="h2">{about.title}</Typography>
+            </Box>
+            <Box mb={1}>
+              <Typography variant="body2" mb={2}>Cześć! Mam na imię Marcin.</Typography>
+            </Box>
+            <Box mb={1}>
+              <Typography variant="body2">{about.desc}</Typography>
+            </Box> 
+            <Box mb={1}>
+              <Typography variant="body2">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>
+            </Box>
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
             <DeveloperAnimate />

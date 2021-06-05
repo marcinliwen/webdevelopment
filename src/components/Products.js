@@ -7,6 +7,8 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
+import Divider from '@material-ui/core/Divider';
+
 import ExtraFeatures from "./ExtraFeatures"
 import FeaturesList from "./FeaturesList"
 import Sectiontitle from "./sectiontitle"
@@ -33,7 +35,7 @@ const products = [
     price: "1000"
   },
   {
-    title: "Advanced",
+    title: "Standard",
     desc:
       "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafi. Pokaż produkty, usługi lub swoje prace w rozbudowanej galerii. Idealne rozwiązanie dla stron firmowych z cennikiem i opisem usług, stron portfolio z galerią zdjęć lub filmów, kalendarzem, stron osobistych.  ",
     features: [
@@ -63,9 +65,9 @@ const products = [
     price: "1500"
   },
   {
-    title: "Advanced Extra",
+    title: "Pro",
     desc:
-      "Ten pakiet zawiera wszystko to co 'Advanced'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
+      "Ten pakiet zawiera wszystko to co 'Standard'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
     features: [
       {title:"powyżej 5 podstron", active: true},
       {title:"responsywność RWD", active: true},
@@ -87,7 +89,7 @@ const Products = () => {
     <section id="products">
       <Container>
         <Sectiontitle title="Jakie strony wykonuję?" />
-        <Grid container spacing={2}>
+        <Grid container spacing={6}>
           {products.map((item, index) => (
             <Grid
               item
@@ -101,15 +103,19 @@ const Products = () => {
             >
               <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box p={3}>
-                  <Typography variant="h4" style={{marginBottom: "32px"}} gutterBottom>{item.title}</Typography>
-                  <Typography variant="body1" style={{fontSize: "16px"}}>{item.desc}</Typography>
+                  <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
+                  <Typography variant="h4" align="center" gutterBottom>{item.price} PLN</Typography>
                 </Box>
-                <FeaturesList features={item.features} />
-                <Box p={2} fontSize="44px" textAlign="center">{item.price} PLN</Box>
-                <Box p={2} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap">
-                  <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
-                  <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
+                <Divider variant="middle" />
+                <Box p={3} style={{ height: "100%" }} display="flex" flexDirection="column">
+                  <Typography variant="body2" >{item.desc}</Typography>
+                  <FeaturesList features={item.features} style={{marginTop: "auto"}}/>
+                  <Box  textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
+                    <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+                    <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
+                  </Box>
                 </Box>
+
               </Box>
             </Grid>
           ))}
