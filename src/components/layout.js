@@ -58,10 +58,15 @@ const Layout = ({ children }) => {
         palette: {
           type: darkState ? "dark" : "light",
           gradient: {
-            main: "linear-gradient(316deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)"
+            main: "linear-gradient(316deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+            light:"linear-gradient( 226deg, #92ddf1 16%, #f9b290 60%, #ffe0b8 100%)",
+            dark:"linear-gradient(226deg,#00c0f1 16%, #ff641a 60%, #ff9100 100%)"
           },
           gradient2: {
             main: "linear-gradient(226deg,#00c0f1 16%, #ff641a 60%, #ff9100 100%)"
+          },
+          gradient3:{
+            main: "linear-gradient( 226deg, #92ddf1 16%, #f9b290 60%, #ffe0b8 100%)"
           }
         },
         typography: {

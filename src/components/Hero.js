@@ -50,8 +50,11 @@ const useStyles = makeStyles(theme => ({
     marginRight: "auto",
     textAlign: "center",
   },
-  hero_gradient: {
-    background: theme.palette.gradient2.main
+  hero_gradient_light: {
+    background: theme.palette.gradient.dark
+  },
+  hero_gradient_dark: {
+    background: theme.palette.gradient.dark
   },
   hero_buttons:{
     //background: theme.palette.gradient2.main,
@@ -81,7 +84,7 @@ const Hero = props => {
   const siteData = data.site.siteMetadata
   const styles = {
     hero: {
-      height: "100vh",
+      minHeight: "100vh",
     },
     hero_title: {
       maxWidth: "800px",
@@ -130,10 +133,10 @@ const Hero = props => {
               <Typography gutterBottom={false} paragraph={false} variant="h4" className={classes.hero_gradient} style={styles.hero_subtitle}>Firmowe, Osobiste, Portfolio, Blog</Typography>
   </Paper>*/}
             <Box mb={4} display="flex" justifyContent="center" flexWrap="wrap" className={classes.hero_buttons} >
-              <Button className={classes.hero_gradient} href="#products" size="large">Firmowe</Button>
-              <Button className={classes.hero_gradient} href="#products" size="large">Osobiste</Button>
-              <Button className={classes.hero_gradient} href="#products" size="large">Portfolio</Button>
-              <Button className={classes.hero_gradient} href="#products" size="large">Blog</Button>
+              <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Firmowe</Button>
+              <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Osobiste</Button>
+              <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Portfolio</Button>
+              <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Blog</Button>
             </Box>
             <Typography
               variant="body1"

@@ -89,10 +89,11 @@ const Products = () => {
     <section id="products">
       <Container>
         <Sectiontitle title="Jakie strony wykonuję?" />
-        <Grid container spacing={6}>
+        <Grid container spacing={2}>
           {products.map((item, index) => (
             <Grid
               item
+              xs={12}
               md={4}
               key={item}
               style={
