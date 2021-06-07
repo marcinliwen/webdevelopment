@@ -16,6 +16,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 import Grid from "@material-ui/core/Grid"
 import Paper from '@material-ui/core/Paper';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 import { makeStyles } from "@material-ui/core/"
 import { useTheme } from "@material-ui/core/styles"
@@ -132,8 +133,9 @@ const Hero = props => {
             {/*<Paper elevation={0} square style={{width: "max-content", margin: "auto"}} >
               <Typography gutterBottom={false} paragraph={false} variant="h4" className={classes.hero_gradient} style={styles.hero_subtitle}>Firmowe, Osobiste, Portfolio, Blog</Typography>
   </Paper>*/}
+  {/*style gradient dla buttonów className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light}*/}
             <Box mb={4} display="flex" justifyContent="center" flexWrap="wrap" className={classes.hero_buttons} >
-              <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Firmowe</Button>
+              <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light}  href="#products" size="large">Firmowe</Button>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Osobiste</Button>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Portfolio</Button>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Blog</Button>
@@ -151,12 +153,19 @@ const Hero = props => {
             spacing={3}
             justify={props.hero_image ? "left" : "center"}
           >
-            <Grid item>
+            {/*<Grid item>
               <Button variant="contained">Zamów stronę</Button>
-            </Grid>
+            </Grid>*/}
             <Grid item>
               <Link to="/#special" style={{ textDecoration: "none" }}>
-                <Button variant="contained">Dowiedz się więcej</Button>
+                <Button>
+                  <Box display="flex"  flexDirection="column"
+                    justifyContent="center" alignItems="center">
+                    <Box>Dowiedz się więcej</Box>
+                    <ArrowDownwardIcon fontSize="small" style={{opacity: "0.7"}}/>
+                  </Box>
+
+                </Button>
               </Link>
             </Grid>
           </Grid>
