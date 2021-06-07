@@ -17,22 +17,26 @@ import Box from "@material-ui/core/Box"
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    marginTop: "auto"
-
+    marginTop: "auto",
+    padding: "0"
     // backgroundColor: theme.palette.background.paper,
   },
   itemlist: {
-    minHeight: "32px",
+    minHeight: "24px",
+    margin: "0",
+    padding: "0"
   },
   itemText: {
+    margin: "0",
     "& span": {
-      fontSize: "16px",
+      fontSize: "14px",
     },
   },
   itemTExtFirst:{
+    margin: "0",
     "& span": {
         fontWeight: "600",
-        fontSize: "16px",
+        fontSize: "14px",
       },
   }
 }))
@@ -72,7 +76,7 @@ export default function CheckboxList({ features }) {
               disabled={value.active ? false : true}            
             >
               <ListItemIcon style={{ minWidth: "24px" }}>
-                <CheckIcon style={{ color: green[500], fontSize: "18px" }} />
+                <CheckIcon style={{ color: green[500], fontSize: "16px" }} />
               </ListItemIcon>
               <ListItemText
                 id={labelId}
