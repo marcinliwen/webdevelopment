@@ -12,6 +12,8 @@ import Divider from '@material-ui/core/Divider';
 import ExtraFeatures from "./ExtraFeatures"
 import FeaturesList from "./FeaturesList"
 import Sectiontitle from "./sectiontitle"
+import PricelistTab from "./PricelistTab"
+import PriceAlTabs from "./PriceAlTabs"
 
 const products = [
   {
@@ -107,13 +109,12 @@ const Products = () => {
                   <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
                   <Typography variant="h4" align="center" gutterBottom>{item.price} PLN</Typography>
                 </Box>
-                <Divider variant="middle" />
-                <Box p={3} style={{ height: "100%" }} display="flex" flexDirection="column">
-                  <Typography variant="body2" >{item.desc}</Typography>
-                  <FeaturesList features={item.features} style={{marginTop: "auto"}}/>
+                {/*<Divider variant="middle" />*/}
+                <Box p={0} style={{ height: "100%" }} display="flex" flexDirection="column">
+                  <PricelistTab desc={item.desc} features={item.features}/>
+                  {/*<FeaturesList features={item.features} style={{marginTop: "auto"}}/>*/}
                   <Box  textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
                     <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
-                    <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
                   </Box>
                 </Box>
 

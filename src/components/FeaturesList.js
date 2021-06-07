@@ -10,6 +10,9 @@ import IconButton from "@material-ui/core/IconButton"
 import CommentIcon from "@material-ui/icons/Comment"
 import CheckIcon from "@material-ui/icons/Check"
 import { green } from "@material-ui/core/colors"
+import Button from "@material-ui/core/Button"
+import Box from "@material-ui/core/Box"
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,9 +79,13 @@ export default function CheckboxList({ features }) {
                 primary={value.title}
                 className={index=== 0 ? classes.itemTExtFirst : classes.itemText}
               />
+              
             </ListItem>
           )
         })}
+        <Box  textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
+          <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
+        </Box>
     </List>
   )
 }
