@@ -6,6 +6,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
+
 import FeaturesList from "./FeaturesList"
 
 function TabPanel(props) {
@@ -20,7 +22,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={{xs:1, md:3}}>
+        <Box p={3}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -44,8 +46,11 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+   // backgroundColor: theme.palette.background.paper,
   },
+  card:{
+      background: "transparent"
+  }
 }));
 
 export default function SimpleTabs(props) {
@@ -58,16 +63,30 @@ export default function SimpleTabs(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
+      <Paper square elevation={0} className={classes.card}>
+        <Tabs 
+         indicatorColor="primary"
+         textColor="primary"
+            value={value} 
+            onChange={handleChange} 
+            aria-label="simple tabs example" 
+            variant="fullWidth">
           <Tab label="Opis" {...a11yProps(0)} />
           <Tab label="Funkcje" {...a11yProps(1)} />
         </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <Typography variant="body2" >{props.desc}</Typography>
+      </Paper >
+      <TabPanel value={value} index={0} style={{minHeight: "440px"}}>
+        <Typography paragraph variant="body1" >{props.desc1}</Typography>
+        <Box  display="flex" flexWrap="wrap" mb={2}> 
+            {props.category.map((item)=>(
+                <Box mr={2}>
+                    <Typography>{item}</Typography>
+                </Box>
+            ))}
+        </Box>
+        <Typography variant="body1" >{props.desc}</Typography>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} style={{minHeight: "440px"}}>
         <FeaturesList features={props.features} style={{marginTop: "auto"}}/>      
       </TabPanel>
 

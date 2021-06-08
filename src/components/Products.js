@@ -14,12 +14,15 @@ import FeaturesList from "./FeaturesList"
 import Sectiontitle from "./sectiontitle"
 import PricelistTab from "./PricelistTab"
 import PriceAlTabs from "./PriceAlTabs"
+import { makeStyles } from "@material-ui/core/"
 
 const products = [
   {
     title: "Basic",
+    desc1: "Idealne rozwiązanie jako:",
+    category:['landing page','strona wizytówka', 'strona produktu', 'strona wydarzenia', 'krótka strona portfolio'],
     desc:
-      "Zaprezentuj swój produkt, usługę lub wydarzenie od najlepszej strony. W krótki i przejrzysty sposób pokaż zalety, detale i najważniejsze informacje. Idealne rozwiązanie jako strona wizytówka firmy, produktu lub wydarzenia.",
+      "Zaprezentuj swój produkt, usługę lub wydarzenie od najlepszej strony. W krótki i przejrzysty sposób pokaż zalety, detale i najważniejsze informacje.",
 
     features: [
       {title:"wszystkie informacje na jednej stronie", active: true},
@@ -38,8 +41,10 @@ const products = [
   },
   {
     title: "Standard",
+    desc1: "Idealne rozwiązanie jako: ",
+    category: ['rozbudowana strona firmowa z cennikiem i opisem usług', 'strona portfolio z kalendarzem i galerią ', 'strona osobista'],
     desc:
-      "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafi. Pokaż produkty, usługi lub swoje prace w rozbudowanej galerii. Idealne rozwiązanie dla stron firmowych z cennikiem i opisem usług, stron portfolio z galerią zdjęć lub filmów, kalendarzem, stron osobistych.  ",
+      "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafi. Pokaż produkty, usługi lub swoje prace w rozbudowanej galerii.",
     features: [
       {title:"do 5 podstron", active:true},
       {title:"responsywność RWD", active: true},
@@ -68,10 +73,12 @@ const products = [
   },
   {
     title: "Pro",
+    desc1: "Idealne rozwiązanie jako:",
+    category: ['rozbudowana strona firmowa z kategoriami produktów / usłóg', 'dodawaj artukułu do modułu bloga', 'strony wielojęzyczne' ],
     desc:
       "Ten pakiet zawiera wszystko to co 'Standard'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
     features: [
-      {title:"powyżej 5 podstron", active: true},
+      {title:"do 10 podstron", active: true},
       {title:"responsywność RWD", active: true},
       {title: "formularz kontaktowy", active: true},
       {title: "formularz newslettera", active: true},
@@ -86,7 +93,16 @@ const products = [
     price: "2000"
   },
 ]
+
+const useStyles = makeStyles(theme => ({
+  gradient_dark: {
+    background: theme.palette.gradient.dark,
+    color: "#fff"
+  },
+}));
 const Products = () => {
+  const classes = useStyles()
+
   return (
     <section id="products">
       <Container>
@@ -104,17 +120,32 @@ const Products = () => {
                   : {}
               }
             >
-              <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
-                <Box p={3}>
+              <Box p={3} boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
+                <Box >
                   <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
                   <Typography variant="h4" align="center" gutterBottom>{item.price} PLN</Typography>
                 </Box>
-                {/*<Divider variant="middle" />*/}
+                <Divider />
                 <Box p={0} style={{ height: "100%" }} display="flex" flexDirection="column">
-                  <PricelistTab desc={item.desc} features={item.features}/>
+                  {/*<PricelistTab desc1={item.desc1} category={item.category} desc={item.desc} features={item.features}/>*/}
+                  <Box mt={2}>
+                    <Typography paragraph variant="body1" >{item.desc1}</Typography>
+                    <Box  mb={2}> 
+                        <ul>
+                          {item.category.map((item)=>(
+                              <Box component="li" mr={2}>
+                                  <Typography>{item}</Typography>
+                              </Box>
+                          ))}
+                        </ul>
+                       
+                    </Box>
+                    <Typography variant="body1" >{item.desc}</Typography>
+                  </Box>
+                  
                   {/*<FeaturesList features={item.features} style={{marginTop: "auto"}}/>*/}
-                  <Box  textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
-                    <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+                  <Box pt={2} pb={1} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
+                    <Button variant="contained" className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
                   </Box>
                 </Box>
 

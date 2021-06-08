@@ -9,7 +9,9 @@ import Checkbox from "@material-ui/core/Checkbox"
 import IconButton from "@material-ui/core/IconButton"
 import CommentIcon from "@material-ui/icons/Comment"
 import CheckIcon from "@material-ui/icons/Check"
-import { green } from "@material-ui/core/colors"
+import RemoveIcon from '@material-ui/icons/Remove';
+import { green, red } from "@material-ui/core/colors"
+
 import Button from "@material-ui/core/Button"
 import Box from "@material-ui/core/Box"
 
@@ -27,16 +29,14 @@ const useStyles = makeStyles(theme => ({
     padding: "0"
   },
   itemText: {
-    margin: "0",
     "& span": {
-      fontSize: "14px",
+      fontSize: "16px",
     },
   },
   itemTExtFirst:{
-    margin: "0",
     "& span": {
         fontWeight: "600",
-        fontSize: "14px",
+        fontSize: "16px",
       },
   }
 }))
@@ -76,7 +76,10 @@ export default function CheckboxList({ features }) {
               disabled={value.active ? false : true}            
             >
               <ListItemIcon style={{ minWidth: "24px" }}>
-                <CheckIcon style={{ color: green[500], fontSize: "16px" }} />
+              {value.active 
+                ?<CheckIcon style={{ color: green[500], fontSize: "16px" }} />
+                : <RemoveIcon style={{ color: red[900], fontSize: "16px" }}/>
+                  }
               </ListItemIcon>
               <ListItemText
                 id={labelId}
@@ -87,9 +90,9 @@ export default function CheckboxList({ features }) {
             </ListItem>
           )
         })}
-        <Box  textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
+        {/*<Box  textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
           <Button variant="contained" color="secondary" style={{marginTop: "8px", marginBottom:"8px"}}>Dodaj funkcje</Button>
-        </Box>
+      </Box>*/}
     </List>
   )
 }
