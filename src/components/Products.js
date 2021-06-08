@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Divider from '@material-ui/core/Divider';
+import Paper from '@material-ui/core/Paper';
 
 import ExtraFeatures from "./ExtraFeatures"
 import FeaturesList from "./FeaturesList"
@@ -42,7 +43,7 @@ const products = [
   {
     title: "Standard",
     desc1: "Idealne rozwiązanie jako: ",
-    category: ['rozbudowana strona firmowa z cennikiem i opisem usług', 'strona portfolio z kalendarzem i galerią ', 'strona osobista'],
+    category: ['strona firmowa z cennikiem i opisem usług', 'strona portfolio z kalendarzem i galerią ', 'strona osobista'],
     desc:
       "Pokaż czym zajmuje się Twoja firma, powiedz klientom jak się z Tobą skontaktować, jak do Ciebie trafi. Pokaż produkty, usługi lub swoje prace w rozbudowanej galerii.",
     features: [
@@ -120,7 +121,8 @@ const Products = () => {
                   : {}
               }
             >
-              <Box p={3} boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
+              <Paper>
+              <Box p={3}  style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box >
                   <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
                   <Typography variant="h4" align="center" gutterBottom>{item.price} PLN</Typography>
@@ -150,6 +152,7 @@ const Products = () => {
                 </Box>
 
               </Box>
+              </Paper>
             </Grid>
           ))}
         </Grid>
