@@ -49,8 +49,7 @@ export default function Contact(props) {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      autoComplete="off"
-      noValidate
+      autoComplete="off"    
     >
       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
       <input type="hidden" name="form-name" value={formName} />
@@ -70,7 +69,7 @@ export default function Contact(props) {
             id="name"
             label="Imię"
             color="secondary"
-            
+            type="text"
             onChange={handleChange}
             fullWidth
             style={{color:"rgb(240, 56, 0)"}}
@@ -81,7 +80,9 @@ export default function Contact(props) {
             id="tel"
             label="Telefon"
             color="secondary"
-            
+            margin="dense"
+            type="text"
+
             onChange={handleChange}
             fullWidth
             style={{ color:"rgb(240, 56, 0)"}}
@@ -93,7 +94,7 @@ export default function Contact(props) {
             id="mail"
             label="Mail"
             color="secondary"
-            
+            type="email"
             onChange={handleChange}
             fullWidth
             style={{color:"rgb(240, 56, 0)"}}
@@ -109,7 +110,7 @@ export default function Contact(props) {
             color="secondary"
             multiline
             rows={4}
-            
+            type="text"
             onChange={handleChange}
             fullWidth
             style={{color:"rgb(240, 56, 0)"}}

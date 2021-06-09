@@ -117,7 +117,6 @@ export default function ResponsiveDialog(props) {
                     data-netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
                     autoComplete="off"
-                    noValidate
                 >
                     {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                     <input type="hidden" name="form-name" value={formName} />
@@ -137,7 +136,7 @@ export default function ResponsiveDialog(props) {
                         id="name"
                         label="Imię"
                         color="secondary"
-                        
+                        type="text"
                         onChange={handleChange}
                         fullWidth
                         style={{color:"rgb(240, 56, 0)"}}
@@ -148,7 +147,7 @@ export default function ResponsiveDialog(props) {
                         id="tel"
                         label="Telefon"
                         color="secondary"
-                        
+                        type="text"
                         onChange={handleChange}
                         fullWidth
                         style={{ color:"rgb(240, 56, 0)"}}
@@ -160,7 +159,8 @@ export default function ResponsiveDialog(props) {
                         id="mail"
                         label="Mail"
                         color="secondary"
-                        
+                        type="email"
+
                         onChange={handleChange}
                         fullWidth
                         style={{color:"rgb(240, 56, 0)"}}
