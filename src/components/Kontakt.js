@@ -41,7 +41,7 @@ const Kontakt = () => {
             justifyContent="center"
           >
             <Typography variant="h2">Napisz do mnie</Typography>
-            <Typography variant="body1">
+            <Typography paragraph variant="body1">
               Masz pytanie? Chciałbyś wiedzieć więcej?
             </Typography>
           </Box>

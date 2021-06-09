@@ -50,15 +50,10 @@ const About = () => {
             <Box mb={4}>
               <Typography variant="h2">{about.title}</Typography>
             </Box>
-            <Box mb={1}>
-              <Typography variant="body2" mb={2}>Cześć! Mam na imię Marcin.</Typography>
-            </Box>
-            <Box mb={1}>
-              <Typography variant="body2">{about.desc}</Typography>
-            </Box> 
-            <Box mb={1}>
-              <Typography variant="body2">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>
-            </Box>
+           
+              <Typography paragraph variant="body1" mb={2}>Cześć! Mam na imię Marcin.</Typography>
+              <Typography paragraph variant="body1">{about.desc}</Typography>
+              <Typography paragraph variant="body1">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
             <DeveloperAnimate />

@@ -76,7 +76,7 @@ const steps = [
   },
   {
     title: "Rozwój",
-    desc: "Najlepsze pomsły pojawiają się z czasem. Zrealizujmy je razem!",
+    desc: "Na świetne pomysły nigdy nie jest za późno. Zrealizujmy je razem!",
   },
 ]
 const Steps = () => {

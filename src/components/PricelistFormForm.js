@@ -36,7 +36,7 @@ const CssTextField = withStyles({
     },
   })(TextField);
 
-export default function Contact() {
+export default function Contact(props) {
   const [state, setState] = React.useState({})
 
   const handleChange = e => {
@@ -55,12 +55,15 @@ export default function Contact() {
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
+      .then(props.closeForm)
       .catch(error => alert(error))
   }
 
+  const formName = "contact-" + props.title;
+
   return (
     <form
-      name="contact"
+      name={formName}
       method="post"
       //action="/thanks/"
       data-netlify="true"
@@ -70,7 +73,7 @@ export default function Contact() {
       noValidate
     >
       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value={formName} />
       <p hidden>
         <label>
           Don’t fill this out:{" "}
@@ -130,6 +133,7 @@ export default function Contact() {
           <Button variant="contained" color="primary" style={{marginLeft: "auto", textTransform: "none"}}>
             Wyślij
           </Button>
+          <Button onClick={props.closeForm}>Zamknij</Button>
         </Grid>
       </Grid>
     </form>

@@ -15,6 +15,7 @@ import FeaturesList from "./FeaturesList"
 import Sectiontitle from "./sectiontitle"
 import PricelistTab from "./PricelistTab"
 import PriceAlTabs from "./PriceAlTabs"
+import PricelistForm from "./PricelistForm"
 import { makeStyles } from "@material-ui/core/"
 
 const products = [
@@ -75,9 +76,9 @@ const products = [
   {
     title: "Pro",
     desc1: "Idealne rozwiązanie jako:",
-    category: ['rozbudowana strona firmowa z kategoriami produktów / usłóg', 'dodawaj artukułu do modułu bloga', 'strony wielojęzyczne' ],
+    category: ['rozbudowana strona firmowa z kategoriami produktów / usłóg', 'dodawaj artukułu do modułu bloga', 'strona wielojęzyczna' ],
     desc:
-      "Ten pakiet zawiera wszystko to co 'Standard'. Dodatkowo pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
+      "Pokaż swoje produkty lub usługi w kategoriach, dodaj rozbudowane opisy swojej działalności, wysyłaj newslettery. Twórz artykuły na blog i udostępniaj aktualności.",
     features: [
       {title:"do 10 podstron", active: true},
       {title:"responsywność RWD", active: true},
@@ -98,12 +99,24 @@ const products = [
 const useStyles = makeStyles(theme => ({
   gradient_dark: {
     background: theme.palette.gradient.dark,
-    color: "#fff"
+    color: "#fff",
+    
   },
+  btnList:{
+    background: theme.palette.gradient.dark,
+    color: "#fff",
+    margin: "8px 0",
+    padding: "8px 16px",
+    flexGrow: "1",
+    fontSize: "24px",
+    borderRadius: "0",
+    textTransform: "none"
+  }
 }));
 const Products = () => {
   const classes = useStyles()
 
+  
   return (
     <section id="products">
       <Container>
@@ -121,7 +134,7 @@ const Products = () => {
                   : {}
               }
             >
-              <Paper>
+              <Paper style={{ height: "100%" }}>
               <Box p={3}  style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box >
                   <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
@@ -146,9 +159,10 @@ const Products = () => {
                   </Box>
                   
                   {/*<FeaturesList features={item.features} style={{marginTop: "auto"}}/>*/}
-                  <Box pt={2} pb={1} textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
-                    <Button variant="contained" className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
-                  </Box>
+                  <PricelistForm  title={item.title} features={item.features} />
+                  {/*<Box pt={2} pb={1} mt="auto" textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
+                    <Button  variant="contained" className={classes.gradient_dark, classes.btnList} style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+                  </Box>*/}
                 </Box>
 
               </Box>
@@ -167,7 +181,7 @@ const Products = () => {
               <Typography variant="body1">Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
             </Box>
             <Box p={2} textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
-              <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+              <Button variant="contained" color="primary" className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px", textTransform: "none"}}>Wybieram</Button>
             </Box>
           </Box>
           </Grid>
@@ -178,7 +192,7 @@ const Products = () => {
               <Typography variant="body1">Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.</Typography>
             </Box>
             <Box p={2} textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
-              <Button variant="contained" color="primary" style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+              <Button variant="contained" color="primary"  className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px", textTransform: "none"}}>Wybieram</Button>
             </Box>
           </Box>
           </Grid>
