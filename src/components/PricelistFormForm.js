@@ -3,6 +3,8 @@ import { navigate } from "gatsby-link"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
+import Typography from "@material-ui/core/Typography"
 import {
     withStyles,
     makeStyles,
@@ -13,28 +15,6 @@ import {
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
 }
-
-const CssTextField = withStyles({
-    root: {
-      '& label.Mui-focused': {
-        color: 'rgb(255, 145, 0)',
-      },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: 'rgb(255, 145, 0)',
-      },
-      '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-          //borderColor: 'rgb(255, 145, 0)',
-        },
-        '&:hover fieldset': {
-          //borderColor: 'rgb(255, 145, 0)',
-        },
-        '&.Mui-focused fieldset': {
-          borderColor: 'rgb(255, 145, 0)',
-        },
-      },
-    },
-  })(TextField);
 
 export default function Contact(props) {
   const [state, setState] = React.useState({})
@@ -81,13 +61,16 @@ export default function Contact(props) {
         </label>
       </p>
       <Grid container spacing={2} justify="flex-start" alignItems="center">
+        <Grid item xs={12}>
+            <Typography variant="h6">Dane kontaktowe:</Typography>
+        </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             required
             id="name"
             label="Imię"
             color="secondary"
-            variant="outlined"
+            
             onChange={handleChange}
             fullWidth
             style={{color:"rgb(240, 56, 0)"}}
@@ -98,7 +81,7 @@ export default function Contact(props) {
             id="tel"
             label="Telefon"
             color="secondary"
-            variant="outlined"
+            
             onChange={handleChange}
             fullWidth
             style={{ color:"rgb(240, 56, 0)"}}
@@ -110,11 +93,14 @@ export default function Contact(props) {
             id="mail"
             label="Mail"
             color="secondary"
-            variant="outlined"
+            
             onChange={handleChange}
             fullWidth
             style={{color:"rgb(240, 56, 0)"}}
           />
+        </Grid>
+        <Grid item xs={12}>
+            <Typography variant="h6">Co jeszcze mogę dla Ciebie zrobić:</Typography>
         </Grid>
         <Grid item xs={12}>
           <TextField
@@ -123,7 +109,7 @@ export default function Contact(props) {
             color="secondary"
             multiline
             rows={4}
-            variant="outlined"
+            
             onChange={handleChange}
             fullWidth
             style={{color:"rgb(240, 56, 0)"}}

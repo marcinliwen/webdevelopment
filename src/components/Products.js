@@ -159,7 +159,7 @@ const Products = () => {
                   </Box>
                   
                   {/*<FeaturesList features={item.features} style={{marginTop: "auto"}}/>*/}
-                  <PricelistForm  title={item.title} features={item.features} />
+                  <PricelistForm  title={item.title} price={item.price} features={item.features} />
                   {/*<Box pt={2} pb={1} mt="auto" textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
                     <Button  variant="contained" className={classes.gradient_dark, classes.btnList} style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
                   </Box>*/}
