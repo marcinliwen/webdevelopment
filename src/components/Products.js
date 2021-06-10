@@ -17,6 +17,9 @@ import PricelistTab from "./PricelistTab"
 import PriceAlTabs from "./PriceAlTabs"
 import PricelistForm from "./PricelistForm"
 import { makeStyles } from "@material-ui/core/"
+import Otherform from "./Otherform"
+import ideaIcon from "../../static/idea.svg"
+import interfaceIcon from "../../static/interface.svg"
 
 const products = [
   {
@@ -170,31 +173,34 @@ const Products = () => {
             </Grid>
           ))}
         </Grid>
-        <Box mt={4}>
-
-        
+        <Box mt={4}>      
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-          <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
-            <Box p={3}>
-              <Typography variant="h4" style={{marginBottom: "32px"}} gutterBottom>Coś inneg?</Typography>
-              <Typography variant="body1">Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
-            </Box>
-            <Box p={2} textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
-              <Button variant="contained" color="primary" className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px", textTransform: "none"}}>Wybieram</Button>
-            </Box>
-          </Box>
+            <Paper>
+              <Box boxShadow={0} style={{ height: "100%" }} display="flex" flexDirection="column">
+                <Box p={3} display="flex" flexWrap="wrap" alignItems="center">
+                  <Typography variant="h4" >Coś innego?</Typography>
+                  <img src={ideaIcon} width="64px" height="64px" style={{marginLeft: "auto"}}/>
+                  <Typography style={{marginTop: "16px"}} variant="body1">Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
+                </Box>
+                <Otherform title="Coś innego?" />
+              </Box>
+            </Paper>    
           </Grid>
           <Grid item xs={12} md={6}>
-          <Box boxShadow={2} style={{ height: "100%" }} display="flex" flexDirection="column">
-            <Box p={3}>
-              <Typography variant="h4" style={{marginBottom: "32px"}} gutterBottom>Modernizacja</Typography>
-              <Typography variant="body1">Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.</Typography>
-            </Box>
-            <Box p={2} textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
-              <Button variant="contained" color="primary"  className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px", textTransform: "none"}}>Wybieram</Button>
-            </Box>
-          </Box>
+            <Paper>
+              <Box boxShadow={0} style={{ height: "100%" }} display="flex" flexDirection="column">
+                <Box p={3} display="flex" flexWrap="wrap" alignItems="center">
+                  <Typography variant="h4" >Modernizacja</Typography>
+                  <img src={interfaceIcon} width="64px" height="64px" style={{marginLeft: "auto"}}/>
+                  <Typography style={{marginTop: "16px"}}  variant="body1">Odświerz wygląd swojej strony, popraw szybkość ładowania lub SEO, dodaj nowe funkcje.</Typography>
+                </Box>
+                <Otherform title="Modernizacja" />
+                {/*<Box p={2} mt="auto" textAlign="center" display="flex" justifyContent="flex-end" flexWrap="wrap">
+                  <Button variant="contained" color="primary"  className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px", textTransform: "none"}}>Wybieram</Button>
+                </Box>*/}
+              </Box>
+            </Paper>    
           </Grid>
         </Grid>
         </Box>
