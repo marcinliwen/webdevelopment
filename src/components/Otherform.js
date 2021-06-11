@@ -74,7 +74,7 @@ export default function ResponsiveDialog(props) {
     const handleChange = e => {
         setState({ ...state, [e.target.name]: e.target.value })
     }
-    const formName = "pricelist-" + props.title.toLowerCase().replaceAll(/\s/g, '-').replaceAll('?', '');
+    const formName = "pricelist-" + props.title.toLowerCase().replace(/\s/g, '-').replace('?', '');
 
 
   return (
