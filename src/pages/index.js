@@ -11,6 +11,7 @@ import Steps from "../components/Steps"
 import Specials from "../components/Specials"
 import Realisations from "../components/Realisations"
 import Kontakt from "../components/Kontakt"
+import OldWhale from "../components/OldWhale"
 
 const IndexPage = () => (
   <Layout>
@@ -21,6 +22,7 @@ const IndexPage = () => (
     <Steps />
     <Realisations />
     <About />
+    <OldWhale />
     <Kontakt />
   </Layout>
 )

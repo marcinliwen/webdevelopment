@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
+import Paper from '@material-ui/core/Paper';
 import { useTheme } from "@material-ui/core/styles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Sectiontitle from "./sectiontitle"
@@ -40,22 +41,25 @@ const About = () => {
     <section id="realisations">
       <Container>
         <Box display="flex" flexWrap="wrap">
-          <Box
-            style={match_md ? style.text : null}
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            justifyContent="center"
-          >
-            <Box mb={4}>
-              <Typography variant="h2">{about.title}</Typography>
+            <Box
+              style={match_md ? style.text : null}
+              display="flex"
+              flexDirection="column"
+              alignItems="flex-start"
+              justifyContent="center"
+            >
+              <Paper square elevation={0} style={{padding: "16px"}}>
+                <Box mb={4}>
+                  <Typography variant="h2">{about.title}</Typography>
+                </Box>
+              
+                <Typography paragraph variant="body1" mb={2}>Cześć! Mam na imię Marcin.</Typography>
+                <Typography paragraph variant="body1">{about.desc}</Typography>
+                <Typography paragraph variant="body1">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>
+              </Paper>
             </Box>
-           
-              <Typography paragraph variant="body1" mb={2}>Cześć! Mam na imię Marcin.</Typography>
-              <Typography paragraph variant="body1">{about.desc}</Typography>
-              <Typography paragraph variant="body1">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>
-          </Box>
           <Box style={match_md ? style.img : style.img_sm}>
+
             <DeveloperAnimate />
           </Box>
         </Box>

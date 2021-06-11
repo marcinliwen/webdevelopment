@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
+import Paper from '@material-ui/core/Paper';
 import { useTheme } from "@material-ui/core/styles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Sectiontitle from "./sectiontitle"
@@ -40,13 +41,17 @@ const Kontakt = () => {
             alignItems="flex-start"
             justifyContent="center"
           >
-            <Typography variant="h2">Napisz do mnie</Typography>
-            <Typography paragraph variant="body1">
-              Masz pytanie? Chciałbyś wiedzieć więcej?
-            </Typography>
+            <Paper square elevation={0} style={{padding: "16px"}}>
+              <Typography variant="h2">Napisz do mnie</Typography>
+              <Typography paragraph variant="body1">
+                Masz pytanie? Chciałbyś wiedzieć więcej?
+              </Typography>
+            </Paper>           
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
-            <KontaktForm />
+            <Paper square elevation={0} style={{padding: "16px"}}>
+              <KontaktForm />
+            </Paper>
           </Box>
         </Box>
       </Container>
