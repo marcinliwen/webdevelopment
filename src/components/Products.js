@@ -141,7 +141,7 @@ const Products = () => {
               <Box p={3}  style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box >
                   <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
-                  <Typography variant="h4" align="center" gutterBottom>{item.price} PLN</Typography>
+                  <Typography variant="h4" align="center" gutterBottom>od {item.price} PLN</Typography>
                 </Box>
                 <Divider />
                 <Box p={0} style={{ height: "100%" }} display="flex" flexDirection="column">
@@ -176,19 +176,19 @@ const Products = () => {
         <Box mt={4}>      
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Paper>
+            <Paper style={{height: "100%"}}>
               <Box boxShadow={0} style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box p={3} display="flex" flexWrap="wrap" alignItems="center">
                   <Typography variant="h4" >Coś innego?</Typography>
                   <img src={ideaIcon} width="64px" height="64px" style={{marginLeft: "auto"}}/>
-                  <Typography style={{marginTop: "16px"}} variant="body1">Masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
+                  <Typography style={{marginTop: "16px"}} variant="body1">Masz już gotowy projekt strony? A może masz inny pomysł na swoją stronę? Znajdziemy rozwiązanie i zbudujemy stronę spełniające Twoje wymagania.</Typography>
                 </Box>
                 <Otherform title="Coś innego?" />
               </Box>
             </Paper>    
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper>
+            <Paper style={{height: "100%"}}>
               <Box boxShadow={0} style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box p={3} display="flex" flexWrap="wrap" alignItems="center">
                   <Typography variant="h4" >Modernizacja</Typography>

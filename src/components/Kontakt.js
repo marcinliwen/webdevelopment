@@ -30,6 +30,7 @@ const Kontakt = () => {
       width: "100%",
     },
   }
+
   return (
     <section id="kontakt">
       <Container>
@@ -41,12 +42,10 @@ const Kontakt = () => {
             alignItems="flex-start"
             justifyContent="center"
           >
-            <Paper square elevation={0} style={{padding: "16px"}}>
-              <Typography variant="h2">Napisz do mnie</Typography>
+              <Typography paragraph  variant="h2">Napisz do mnie</Typography>
               <Typography paragraph variant="body1">
                 Masz pytanie? Chciałbyś wiedzieć więcej?
               </Typography>
-            </Paper>           
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
             <Paper square elevation={0} style={{padding: "16px"}}>

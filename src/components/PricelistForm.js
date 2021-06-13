@@ -99,7 +99,7 @@ export default function ResponsiveDialog(props) {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-            <Typography variant="h4">Chcę zbudować stronę w wersji: {props.title} <Box component="span" style={{whiteSpace: "nowrap"}}>({props.price} PLN)</Box></Typography></DialogTitle>
+            <Typography variant="h4">Chcę zbudować stronę w wersji: {props.title} <Box component="span" style={{whiteSpace: "nowrap"}}>(od {props.price} PLN)</Box></Typography></DialogTitle>
         <DialogContent>
             <Box display={fullScreen ? "block" : "flex"}>
             <Box flex="1" pr={{sm: 4}}>

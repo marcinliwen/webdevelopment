@@ -48,11 +48,11 @@ const About = () => {
               alignItems="flex-start"
               justifyContent="center"
             >
-              <Paper square elevation={0} style={{padding: "16px"}}>
                 <Box mb={4}>
                   <Typography variant="h2">{about.title}</Typography>
                 </Box>
-              
+                <Paper square elevation={0} style={{padding: "16px"}}>
+
                 <Typography paragraph variant="body1" mb={2}>Cześć! Mam na imię Marcin.</Typography>
                 <Typography paragraph variant="body1">{about.desc}</Typography>
                 <Typography paragraph variant="body1">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>

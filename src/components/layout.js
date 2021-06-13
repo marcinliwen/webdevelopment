@@ -19,10 +19,9 @@ import { CssBaseline } from "@material-ui/core"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Switch from "@material-ui/core/Switch"
 import { connect } from "react-redux"
-
 import Header from "./header"
 import "./layout.css"
-
+import Navmenu from "./Navmenu"
 /*let theme = createMuiTheme({
   palette: {
     type: 'light',
@@ -38,6 +37,9 @@ import "./layout.css"
   },
 });
 */
+if (typeof window !== 'undefined') {
+  require('smooth-scroll')('a[href*="#"]');
+}
 
 const Layout = ({ children }) => {
   //pobiera wartość mediaquery gdy 'window' jest określony
@@ -88,11 +90,12 @@ const Layout = ({ children }) => {
         <CssBaseline />
         {/*<Switch checked={darkState} onChange={handleThemeChange} />*/}
         <Header handleThemeChange={handleThemeChange} darkState={darkState} />
+        <Navmenu />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+        <footer style={{textAlign: "center"}}>
+          © {new Date().getFullYear()},
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          Stary Wieloryb
         </footer>
       </ThemeProvider>
     </>

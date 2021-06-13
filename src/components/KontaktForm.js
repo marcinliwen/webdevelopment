@@ -36,6 +36,25 @@ const CssTextField = withStyles({
     },
   })(TextField);
 
+
+  const useStyles = makeStyles(theme => ({
+    gradient_dark: {
+      background: theme.palette.gradient.dark,
+      color: "#fff",
+      
+    },
+    btnList:{
+      background: theme.palette.gradient.dark,
+      color: "#fff",
+      margin: "8px 0",
+      padding: "8px 16px",
+      flexGrow: "1",
+      fontSize: "24px",
+      borderRadius: "0",
+      textTransform: "none"
+    }
+  }));
+
 export default function Contact() {
   const [state, setState] = React.useState({})
 
@@ -57,6 +76,8 @@ export default function Contact() {
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
+
+  const classes = useStyles()
 
   return (
     <form
@@ -127,7 +148,7 @@ export default function Contact() {
           />
         </Grid>
         <Grid item xs={12} style={{display: "flex"}}>
-          <Button variant="contained" color="primary" style={{marginLeft: "auto", textTransform: "none"}}>
+          <Button variant="contained" color="primary"  className={classes.gradient_dark} style={{marginLeft: "auto", textTransform: "none"}}>
             Wyślij
           </Button>
         </Grid>
