@@ -157,8 +157,7 @@ const Hero = props => {
               <Button variant="contained">Zamów stronę</Button>
             </Grid>*/}
             <Grid item>
-              <Link to="/#special" style={{ textDecoration: "none" }}>
-                <Button>
+                <Button href="#special" style={{ textDecoration: "none" }}>
                   <Box display="flex"  flexDirection="column"
                     justifyContent="center" alignItems="center">
                     <Box>Dowiedz się więcej</Box>
@@ -166,7 +165,6 @@ const Hero = props => {
                   </Box>
 
                 </Button>
-              </Link>
             </Grid>
           </Grid>
           {props.hero_image ? (

@@ -51,7 +51,7 @@ const About = () => {
                 <Box mb={4}>
                   <Typography variant="h2">{about.title}</Typography>
                 </Box>
-                <Paper square elevation={0} style={{padding: "16px"}}>
+                <Paper style={{padding: "16px"}}>
 
                 <Typography paragraph variant="body1" mb={2}>Cześć! Mam na imię Marcin.</Typography>
                 <Typography paragraph variant="body1">{about.desc}</Typography>

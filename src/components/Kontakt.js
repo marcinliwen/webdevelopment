@@ -43,12 +43,10 @@ const Kontakt = () => {
             justifyContent="center"
           >
               <Typography paragraph  variant="h2">Napisz do mnie</Typography>
-              <Typography paragraph variant="body1">
-                Masz pytanie? Chciałbyś wiedzieć więcej?
-              </Typography>
+              
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
-            <Paper square elevation={0} style={{padding: "16px"}}>
+            <Paper  style={{padding: "16px"}}>
               <KontaktForm />
             </Paper>
           </Box>

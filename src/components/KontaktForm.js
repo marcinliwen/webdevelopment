@@ -3,6 +3,8 @@ import { navigate } from "gatsby-link"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
+
 import {
     withStyles,
     makeStyles,
@@ -99,6 +101,11 @@ export default function Contact() {
         </label>
       </p>
       <Grid container spacing={2} justify="flex-start" alignItems="center">
+          <Grid item xs={12}>
+            <Typography paragraph variant="body1">
+                Masz pytanie? Chciałbyś wiedzieć więcej?
+            </Typography>
+          </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             required
