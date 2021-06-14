@@ -18,7 +18,7 @@ const SwitchStyle = {
   position: "fixed",
   top: "15px",
   right: "15px",
-  zIndex: '9991'
+  zIndex: '1201'
 }
 
 function getIdforLink(index){

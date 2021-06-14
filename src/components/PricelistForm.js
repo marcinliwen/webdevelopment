@@ -14,6 +14,9 @@ import Typography from '@material-ui/core/Typography';
 import { navigate } from "gatsby-link"
 import TextField from "@material-ui/core/TextField"
 import Grid from "@material-ui/core/Grid"
+import Paper from '@material-ui/core/Paper';
+import Backdrop from '@material-ui/core/Backdrop';
+
 
 
 
@@ -36,7 +39,34 @@ const useStyles = makeStyles(theme => ({
       fontSize: "24px",
       borderRadius: "0",
       textTransform: "none"
-    }
+    },
+    formDialog:{
+        visibility: 'hidden',
+        position: 'fixed',
+        top: '0',
+        left:'0',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        [theme.breakpoints.up("md")]: {
+            height: 'inherit',
+            maxHeight: '100%',
+            width: 'inherit',
+            top: '50%',
+            left:'50%',
+            transform: 'translate(-50%, -50%)', 
+        },
+        '&[open]':{
+            visibility: 'visible',
+            zIndex: '9999',
+        }
+    },
+    backdrop: {
+        zIndex: theme.zIndex.drawer + 2,
+        color: '#fff',
+      },
+    
   }));
 
   function encode(data) {
@@ -45,6 +75,8 @@ const useStyles = makeStyles(theme => ({
       .join("&")
   }
 
+const isBrowser = typeof window !== "undefined"
+
 export default function ResponsiveDialog(props) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
@@ -52,6 +84,7 @@ export default function ResponsiveDialog(props) {
 
   const handleClickOpen = () => {
     setOpen(true);
+    
   };
 
   const handleClose = () => {
@@ -60,7 +93,17 @@ export default function ResponsiveDialog(props) {
 
   const classes = useStyles()
 
-
+  React.useEffect(() => {
+    // Zaktualizuj tytuł dokumentu korzystając z interfejsu API przeglądarki
+    if(open){
+      document.querySelector("html").classList.add('block-scroll')
+      //console.log(document.querySelector("html"))
+    }
+    else{ 
+      //console.log(document.querySelector("html"))
+      document.querySelector("html").classList.remove('block-scroll')
+    }
+  });
   //form handling
     
 
@@ -90,10 +133,9 @@ export default function ResponsiveDialog(props) {
   return (
         <Box pt={2} pb={1} mt="auto" textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
             <Button onClick={handleClickOpen} variant="contained" className={classes.gradient_dark, classes.btnList} style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
-      <Dialog
-        fullScreen={fullScreen}
-        fullWidth={true}
-        maxWidth="md"
+    <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+      <Paper
+        className={classes.formDialog}
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
@@ -110,7 +152,7 @@ export default function ResponsiveDialog(props) {
             <Box pl={{sm: 4}} flex="1">
                 <form
                     id={formName}
-                    name="pricelist"
+                    name={formName}
                     method="post"
                     //action="/thanks/"
                     data-netlify="true"
@@ -196,7 +238,8 @@ export default function ResponsiveDialog(props) {
                             Wyślij
                         </Button>
         </DialogActions>
-      </Dialog>
+      </Paper>
+      </Backdrop>
       </Box>
   );
 }
