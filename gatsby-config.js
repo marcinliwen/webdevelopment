@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Strony Internetowe`,
+    title2: 'Stary Wieloryb',
     subtitle:
       "Zamów stronę internetową, zdobądź nowych klientów i bądź na bierząco ze stałymi klientami, w przystępnej cenie.",
     description: `Projektowanie i kodowanie stron internetowych dla firm, osobistych, wizytówek, portfolio.`,
@@ -27,7 +28,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/oldwhale-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-smoothscroll`,

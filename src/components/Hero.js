@@ -77,6 +77,7 @@ const Hero = props => {
       site {
         siteMetadata {
           title
+          title2
           subtitle
         }
       }
@@ -127,7 +128,7 @@ const Hero = props => {
             style={styles.hero_title}
             className={props.hero_image ? null : classes.hero_noimg}
           >
-            <Typography variant="h1" style={{ marginBottom: "42px" }}>
+            <Typography variant="h1">
               {siteData.title}
             </Typography>
             {/*<Paper elevation={0} square style={{width: "max-content", margin: "auto"}} >

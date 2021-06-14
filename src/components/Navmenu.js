@@ -16,6 +16,9 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import MenuIcon from '@material-ui/icons/Menu';
+import Box from "@material-ui/core/Box"
+
 
 const useStyles = makeStyles({
   list: {
@@ -35,6 +38,18 @@ const useStyles = makeStyles({
         transition: 'all 450ms cubic-bezier(0.4, 0, 0.2, 1) 50ms',
         transform: 'translateX(0px)'
     }
+  },
+  burgerbtn: {
+    transition: 'all 450ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    transform: 'translateX(-60px)',
+    '&:hover':{
+      transition: 'all 450ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+      transform: 'translateX(-5px)'
+    }
+  },
+  burgerConteiner: {
+    position: "fixed", top: '50%', transform: 'translateY(-50%)', left: "0px",
+    zIndex: '999'
   }
 });
 
@@ -42,6 +57,13 @@ const Menubutton = withStyles((theme) => ({
   root:{
     borderRadius: '0',
     textAlign: 'center',
+  }
+}))(Button);
+
+const Burgerbutton = withStyles((theme) => ({
+  root:{
+    textAlign: 'center',
+    paddingRight: '0px'
   }
 }))(Button);
 
@@ -113,10 +135,11 @@ const anchor = 'left';
     <div>
       {/*{['left', 'right', 'top', 'bottom'].map((anchor) => (*/}
         <React.Fragment key={anchor}>
-          <IconButton  onClick={toggleDrawer(anchor, true)} style={{position: "fixed", bottom: '15px', right: "15px"}}>
-              <AddIcon />
-          </IconButton>
-          <Button variant="contained" color="#00c0f1" onClick={toggleDrawer(anchor, true)} style={{position: "fixed", top: '15px', left: "15px", background: '#00c0f1'}}>MENU</Button>
+          <Box className={classes.burgerConteiner}>
+            <Burgerbutton className={classes.burgerbtn} variant="contained" color="#00c0f1" onClick={toggleDrawer(anchor, true)} >
+              MENU<ChevronRightIcon  />
+            </Burgerbutton>
+          </Box>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
