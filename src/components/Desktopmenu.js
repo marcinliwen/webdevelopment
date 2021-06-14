@@ -12,7 +12,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MobileMenu from "./MobileMenu"
-import Desktopmenu from "./Desktopmenu"
 
 const SwitchStyle = {
   position: "fixed",
@@ -33,27 +32,28 @@ function getIdforLink(index){
 
   }
 }
-const Header = props => {
-  const theme = useTheme()
-  const match_md = useMediaQuery(theme.breakpoints.up("md"))
-
+const Desktopmenu = props => {
+  
   return (
-    <header >
-     
-      <Box style={SwitchStyle}>
-        <Switch checked={props.darkState} onChange={props.handleThemeChange} />
+   
+      <Box display="flex" align="center" justifyContent="center" style={{position: "absolute", top: '0', width: '100%'}}> 
+        {['Home', 'Cennik', 'Kroki', 'Realizacje'].map((text, index) => (
+          <Button 
+            href={getIdforLink(index)} 
+            key={text}
+            disableFocusRipple={true}
+            disableRipple={true}
+            disableElevation={true}  
+            style={{borderRadius: '0'}}          
+            >
+            <ListItemText primary={text} />
+          </Button>
+        ))}
       </Box>
-      {match_md ? <Desktopmenu /> : <MobileMenu />}
-    </header>
+      
   )
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
-export default Header
+export default Desktopmenu
