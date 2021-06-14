@@ -110,7 +110,7 @@ export default function ResponsiveDialog(props) {
             <Box pl={{sm: 4}} flex="1">
                 <form
                     id={formName}
-                    name={formName}
+                    name="pricelist"
                     method="post"
                     //action="/thanks/"
                     data-netlify="true"
