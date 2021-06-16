@@ -141,7 +141,7 @@ const Products = () => {
               <Box p={3}  style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box >
                   <Typography variant="h4" align="center" gutterBottom>{item.title}</Typography>
-                  <Typography variant="h4" align="center" gutterBottom>od {item.price} PLN</Typography>
+                  {/*<Typography variant="h4" align="center" gutterBottom>od {item.price} PLN</Typography>*/}
                 </Box>
                 <Divider />
                 <Box p={0} style={{ height: "100%" }} display="flex" flexDirection="column">

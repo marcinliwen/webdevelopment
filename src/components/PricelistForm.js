@@ -41,6 +41,7 @@ const useStyles = makeStyles(theme => ({
       textTransform: "none"
     },
     formDialog:{
+        textAlign: 'left',
         visibility: 'hidden',
         position: 'fixed',
         top: '0',
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up("md")]: {
             height: 'inherit',
             maxHeight: '100%',
-            width: 'inherit',
+            maxWidth: '960px',
             top: '50%',
             left:'50%',
             transform: 'translate(-50%, -50%)', 
@@ -141,7 +142,7 @@ export default function ResponsiveDialog(props) {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-            <Typography variant="h4">Chcę zbudować stronę w wersji: {props.title} <Box component="span" style={{whiteSpace: "nowrap"}}>(od {props.price} PLN)</Box></Typography></DialogTitle>
+            <Typography variant="h4">Chcę zbudować stronę w wersji: {props.title} <Box component="span" style={{whiteSpace: "nowrap"}}>{/*(od {props.price} PLN)*/}</Box></Typography></DialogTitle>
         <DialogContent>
             <Box display={fullScreen ? "block" : "flex"}>
             <Box flex="1" pr={{sm: 4}}>
