@@ -90,6 +90,7 @@ const Layout = ({ children }) => {
         <CssBaseline />
         {/*<Switch checked={darkState} onChange={handleThemeChange} />*/}
         <Header handleThemeChange={handleThemeChange} darkState={darkState} />
+        <Navmenu />
         <main>{children}</main>
         <footer style={{textAlign: "center"}}>
           © {new Date().getFullYear()},

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import clsx from 'clsx';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -14,15 +15,23 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import IconButton from '@material-ui/core/IconButton';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import DehazeIcon from '@material-ui/icons/Dehaze';
 import AddIcon from '@material-ui/icons/Add';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
-import Box from "@material-ui/core/Box"
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 
 const useStyles = makeStyles({
   list: {
     width: 250,
+    maxWidth: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
   fullList: {
     width: 'auto',
@@ -48,7 +57,10 @@ const useStyles = makeStyles({
     }
   },
   burgerConteiner: {
-    position: "fixed", top: '50%', transform: 'translateY(-50%)', left: "0px",
+    position: "fixed", 
+    top: '0px', 
+    //transform: 'translateY(-50%)', 
+    right: "0px",
     zIndex: '999'
   }
 });
@@ -63,7 +75,8 @@ const Menubutton = withStyles((theme) => ({
 const Burgerbutton = withStyles((theme) => ({
   root:{
     textAlign: 'center',
-    paddingRight: '0px'
+    padding: '0px',
+    margin:'0px'
   }
 }))(Button);
 
@@ -78,6 +91,8 @@ function getIdforLink(index){
       return '#steps';
     case 3:
       return '#realisations'
+    case 4:
+      return '#kontakt'
 
   }
 }
@@ -109,7 +124,7 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Cennik', 'Kroki', 'Realizacje'].map((text, index) => (
+        {['Home', 'Wybór', 'Etapy', 'Realizacje', 'Kontakt' ].map((text, index) => (
           <ListItem style={{padding: '0', margin:'0'}}>
           <Menubutton 
             href={getIdforLink(index)} 
@@ -120,8 +135,7 @@ export default function SwipeableTemporaryDrawer() {
             fullWidth={true}
             className={classes.menuButton}
             >
-            <ListItemText primary={text} />
-            <ChevronRightIcon  className={classes.menuBtIcon}/>
+            <Typography style={{fontSize: '1.5rem'}} >{text}</Typography>
           </Menubutton>
           </ListItem>
           
@@ -129,25 +143,27 @@ export default function SwipeableTemporaryDrawer() {
       </List>
     </div>
   );
-const anchor = 'left';
+const anchor = 'right';
 
   return (
     <div>
       {/*{['left', 'right', 'top', 'bottom'].map((anchor) => (*/}
-        <React.Fragment key={anchor}>
+        <React.Fragment key={anchor} >
           <Box className={classes.burgerConteiner}>
-            <Burgerbutton className={classes.burgerbtn} variant="contained" color="#00c0f1" onClick={toggleDrawer(anchor, true)} >
-              MENU<ChevronRightIcon  />
-            </Burgerbutton>
+            <a style={{display: "block"}} onClick={toggleDrawer(anchor, true)} >
+              <DehazeIcon style={{ fontSize: 44 }} />
+            </a>
           </Box>
-          <SwipeableDrawer
+          <Drawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
+            style={{justifyContent: 'center'}}
+
           >
             {list(anchor)}
-          </SwipeableDrawer>
+          </Drawer>
         </React.Fragment>
       {/*}))}*/}
     </div>

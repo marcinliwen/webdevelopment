@@ -16,8 +16,8 @@ import Desktopmenu from "./Desktopmenu"
 
 const SwitchStyle = {
   position: "fixed",
-  top: "15px",
-  right: "15px",
+  top: "0px",
+  left: "0px",
   zIndex: '1201'
 }
 
@@ -44,7 +44,7 @@ const Header = props => {
       <Box style={SwitchStyle}>
         <Switch checked={props.darkState} onChange={props.handleThemeChange} />
       </Box>
-      {match_md ? <Desktopmenu /> : <MobileMenu />}
+      {/*match_md ? <Desktopmenu /> : <MobileMenu />*/}
     </header>
   )
 }

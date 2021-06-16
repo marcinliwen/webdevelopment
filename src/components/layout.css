@@ -50,9 +50,15 @@ progress {
 template {
   display: none;
 }
+/*reset a*/
 a {
+  text-decoration: none;
+  display: block;
+  margin: 0px;
+  padding: 0px;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: inherit;
 }
 a:active,
 a:hover {
