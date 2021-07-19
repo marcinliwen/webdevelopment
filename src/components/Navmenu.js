@@ -124,7 +124,7 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Wybór', 'Etapy', 'Realizacje', 'Kontakt' ].map((text, index) => (
+        {['Home', 'Oferta', 'Etapy', 'Realizacje', 'Kontakt' ].map((text, index) => (
           <ListItem style={{padding: '0', margin:'0'}}>
           <Menubutton 
             href={getIdforLink(index)} 

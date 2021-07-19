@@ -133,7 +133,7 @@ export default function ResponsiveDialog(props) {
 
   return (
         <Box pt={2} pb={1} mt="auto" textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
-            <Button onClick={handleClickOpen} variant="contained" className={classes.gradient_dark, classes.btnList} style={{marginTop: "8px", marginBottom:"8px"}}>Wybieram</Button>
+            <Button onClick={handleClickOpen} variant="contained" className={classes.gradient_dark, classes.btnList} style={{marginTop: "8px", marginBottom:"8px"}}>Więcej</Button>
     <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
       <Paper
         className={classes.formDialog}
@@ -236,7 +236,7 @@ export default function ResponsiveDialog(props) {
         <DialogActions style={{padding: "16px 24px"}}>
                         <Button onClick={handleClose} style={{marginLeft: "auto", textTransform: "none"}}>Zamknij</Button>
                         <Button form={formName} type="submit"  variant="contained" color="primary"  className={classes.gradient_dark} style={{textTransform: "none"}}>
-                            Wyślij
+                            Proszę o wycenę
                         </Button>
         </DialogActions>
       </Paper>

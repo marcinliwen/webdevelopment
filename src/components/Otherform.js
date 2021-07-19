@@ -184,7 +184,7 @@ export default function ResponsiveDialog(props) {
         <DialogActions style={{padding: "16px 24px"}}>
                         <Button onClick={handleClose} style={{marginLeft: "auto", textTransform: "none"}}>Zamknij</Button>
                         <Button form={formName} type="submit"  variant="contained" color="primary"  className={classes.gradient_dark} style={{textTransform: "none"}}>
-                            Wyślij
+                            Proszę o wycenę
                         </Button>
         </DialogActions>
       </Dialog>
