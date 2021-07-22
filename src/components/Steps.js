@@ -17,6 +17,8 @@ import TimelineContent from "@material-ui/lab/TimelineContent"
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent"
 import TimelineDot from "@material-ui/lab/TimelineDot"
 import Paper from "@material-ui/core/Paper"
+import { Fade } from "react-awesome-reveal";
+
 
 import Sectiontitle from "./sectiontitle"
 
@@ -89,6 +91,7 @@ const Steps = () => {
         <Grid container spacing={2}>
           {steps.map((item, index) => (
             <Grid item className={classes.gridItem} key={index}>
+              <Fade delay={index * 100} fraction="1" triggerOnce style={{height: "100%"}}>
               <Paper elevation={3} className={classes.paper}>
                 <Box>
                   <Typography
@@ -110,6 +113,7 @@ const Steps = () => {
                   </Box>
                 </Box>
               </Paper>
+              </Fade>
             </Grid>
           ))}
         </Grid>

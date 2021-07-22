@@ -12,6 +12,7 @@ import { useTheme } from "@material-ui/core/styles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Sectiontitle from "./sectiontitle"
 import DeveloperAnimate from "../assets/developer-animate.svg"
+import { Fade } from "react-awesome-reveal";
 
 const about = {
   title: "Poznajmy się.",
@@ -51,16 +52,21 @@ const About = () => {
                 <Box mb={4}>
                   <Typography variant="h2">{about.title}</Typography>
                 </Box>
+                <Fade fraction="1" triggerOnce>
+
                 <Paper style={{padding: "16px"}}>
 
                 <Typography paragraph variant="body1" mb={2}>Cześć! Mam na imię Marcin.</Typography>
                 <Typography paragraph variant="body1">{about.desc}</Typography>
                 <Typography paragraph variant="body1">Pomogę Ci wprowadzić Twój biznes do internetu.</Typography>
               </Paper>
+              </Fade>
             </Box>
           <Box style={match_md ? style.img : style.img_sm}>
-
-            <DeveloperAnimate />
+            <Fade direction="down" fraction="1" triggerOnce>
+              <DeveloperAnimate />
+            </Fade>
+            
           </Box>
         </Box>
       </Container>

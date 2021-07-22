@@ -14,6 +14,9 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
+import { Fade } from "react-awesome-reveal";
+import {AttentionSeeker} from "react-awesome-reveal";
+
 import Grid from "@material-ui/core/Grid"
 import Paper from '@material-ui/core/Paper';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
@@ -59,15 +62,18 @@ const useStyles = makeStyles(theme => ({
   },
   hero_buttons:{
     //background: theme.palette.gradient2.main,
-    '& > *': {
-      margin: theme.spacing(1),
+    '& a': {
+      width: "100%",
       color: "#fff",
       textTransform: "none",
       fontSize: "24px",
       padding: "8px 16px",
-      flexGrow: "1",
       borderRadius: "0"
     },
+    '& > *':{
+      flexGrow: "1",
+      margin: theme.spacing(1),
+    }
   }
 }))
 
@@ -128,26 +134,35 @@ const Hero = props => {
             style={styles.hero_title}
             className={props.hero_image ? null : classes.hero_noimg}
           >
-            <Typography variant="h1">
-              {siteData.title}
-            </Typography>
+            <Fade direction="down" triggerOnce>
+              <Typography variant="h1">
+                {siteData.title}
+              </Typography>
+            </Fade>
+            
             {/*<Paper elevation={0} square style={{width: "max-content", margin: "auto"}} >
               <Typography gutterBottom={false} paragraph={false} variant="h4" className={classes.hero_gradient} style={styles.hero_subtitle}>Firmowe, Osobiste, Portfolio, Blog</Typography>
   </Paper>*/}
   {/*style gradient dla buttonów className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light}*/}
             <Box mb={4} display="flex" justifyContent="center" flexWrap="wrap" className={classes.hero_buttons} >
+              <Fade cascade damping="0.3" triggerOnce>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light}  href="#products" size="large">Firmowe</Button>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Osobiste</Button>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Portfolio</Button>
               <Button className={isDarkTheme ? classes.hero_gradient_dark : classes.hero_gradient_light} href="#products" size="large">Blog</Button>
+              
+              </Fade>
+              
             </Box>
-            <Typography
-              variant="body1"
-              style={{ maxWidth: "450px" }}
-              className={props.hero_image ? null : classes.hero_noimg}
-            >
-              {siteData.subtitle}
-            </Typography>
+            <Fade delay="100" triggerOnce> 
+              <Typography
+                variant="body1"
+                style={{ maxWidth: "450px" }}
+                className={props.hero_image ? null : classes.hero_noimg}
+              >
+                {siteData.subtitle}
+              </Typography>
+            </Fade>            
           </Box>
           <Grid
             container
@@ -158,14 +173,21 @@ const Hero = props => {
               <Button variant="contained">Zamów stronę</Button>
             </Grid>*/}
             <Grid item>
-                <Button href="#special" style={{ textDecoration: "none" }}>
+              <Fade direction="top" delay="150" triggerOnce>
+              <Button href="#special" style={{ textDecoration: "none" }}>
                   <Box display="flex"  flexDirection="column"
                     justifyContent="center" alignItems="center">
                     <Box>Dowiedz się więcej</Box>
-                    <ArrowDownwardIcon fontSize="small" style={{opacity: "0.7"}}/>
+                    <Box style={{position: "relative", display:"flex", justifyContent:"center"}}>
+                      <ArrowDownwardIcon className="animation_fadedown" fontSize="small" style={{opacity: "0.7"}}/>
+                      <ArrowDownwardIcon className="animation_fadedown_second" fontSize="small" style={{opacity: "0.7"}}/>
+                    </Box>
+                    
                   </Box>
 
                 </Button>
+              </Fade>
+               
             </Grid>
           </Grid>
           {props.hero_image ? (

@@ -635,3 +635,41 @@ section {
 .block-scroll{
   overflow: hidden;
 }
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+.animation_fadedown{
+  animation-duration: 2s;
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+.animation_fadedown_second{
+  animation-duration: 2s;
+  animation-delay: 1s;
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+  animation-iteration-count: infinite;
+  position: absolute;
+}

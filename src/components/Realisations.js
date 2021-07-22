@@ -13,6 +13,7 @@ import Link from "@material-ui/core/Link"
 import Paper from "@material-ui/core/Paper"
 import { useTheme } from "@material-ui/core/styles"
 import { makeStyles } from "@material-ui/core/styles"
+import { Slide } from "react-awesome-reveal";
 
 import Sectiontitle from "./sectiontitle"
 import ComponenetName from "./ComponenetName"
@@ -103,6 +104,7 @@ const Realisations = (props) => {
                   : {}
               }
             >
+              <Slide direction={index%2 ===0? "left":"right"} fraction="1" triggerOnce>
               <Paper elevation={3} className={classes.paper}>
                 <Box p={4} style={{ height: "100%" }}>
                   <Grid container>
@@ -130,6 +132,7 @@ const Realisations = (props) => {
                   
                 </Box>
               </Paper>
+              </Slide>
             </Grid>
           )})}
         </Grid>

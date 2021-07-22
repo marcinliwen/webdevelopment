@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Divider from '@material-ui/core/Divider';
 import Paper from '@material-ui/core/Paper';
+import { Zoom } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 import ExtraFeatures from "./ExtraFeatures"
 import FeaturesList from "./FeaturesList"
@@ -176,7 +178,7 @@ const Products = () => {
         <Box mt={4}>      
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Paper style={{height: "100%"}}>
+            <Paper style={{height: "100%",}}>
               <Box boxShadow={0} style={{ height: "100%" }} display="flex" flexDirection="column">
                 <Box p={3} display="flex" flexWrap="wrap" alignItems="center">
                   <Typography variant="h4" >Coś innego?</Typography>
@@ -200,7 +202,7 @@ const Products = () => {
                   <Button variant="contained" color="primary"  className={classes.gradient_dark} style={{marginTop: "8px", marginBottom:"8px", textTransform: "none"}}>Wybieram</Button>
                 </Box>*/}
               </Box>
-            </Paper>    
+            </Paper> 
           </Grid>
         </Grid>
         </Box>

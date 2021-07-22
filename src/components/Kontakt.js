@@ -12,6 +12,7 @@ import { useTheme } from "@material-ui/core/styles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Sectiontitle from "./sectiontitle"
 import KontaktForm from "./KontaktForm"
+import { Fade } from "react-awesome-reveal";
 
 const Kontakt = () => {
   const theme = useTheme()
@@ -46,9 +47,11 @@ const Kontakt = () => {
               
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
+          <Fade fraction="1" triggerOnce>
             <Paper  style={{padding: "16px"}}>
               <KontaktForm />
             </Paper>
+            </Fade>
           </Box>
         </Box>
       </Container>

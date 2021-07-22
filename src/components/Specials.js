@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
 import { makeStyles } from "@material-ui/core/styles"
 import Sectiontitle from "./sectiontitle"
+import { Zoom } from "react-awesome-reveal";
 
 const specials = [
   {
@@ -51,6 +52,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("md")]: {
       width: "calc(100% / 5)",
     },
+    '& >*':{
+      height: "100%"
+    }
   },
   paper: {
     height: "100%",
@@ -65,8 +69,10 @@ const Special = () => {
       <Container>
         <Sectiontitle title="Jaka będzie Twoja przyszła strona?" />
         <Grid container spacing={2}>
-          {specials.map(item => (
-            <Grid item className={classes.gridItem} key={item}>
+          {specials.map((item, index) => (
+           
+              <Grid item className={classes.gridItem} key={item}>
+                 <Zoom delay={index * 100} fraction="1" triggerOnce> 
               <Paper elevation={0} className={classes.paper}>
                 <Box p={4} style={{ height: "100%", minHeight: "250px" }}>
                   <Typography
@@ -81,7 +87,10 @@ const Special = () => {
                   <Typography variant="body1">{item.desc}</Typography>
                 </Box>
               </Paper>
+              </Zoom>
             </Grid>
+            
+            
           ))}
         </Grid>
       </Container>
