@@ -47,7 +47,7 @@ const Kontakt = () => {
               
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
-          <Fade fraction="1" triggerOnce>
+          <Fade fraction="0.5" triggerOnce>
             <Paper  style={{padding: "16px"}}>
               <KontaktForm />
             </Paper>

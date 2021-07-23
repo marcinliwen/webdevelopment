@@ -52,7 +52,7 @@ const About = () => {
                 <Box mb={4}>
                   <Typography variant="h2">{about.title}</Typography>
                 </Box>
-                <Fade fraction="1" triggerOnce>
+                <Fade  triggerOnce>
 
                 <Paper style={{padding: "16px"}}>
 
@@ -63,7 +63,7 @@ const About = () => {
               </Fade>
             </Box>
           <Box style={match_md ? style.img : style.img_sm}>
-            <Fade direction="down" fraction="1" triggerOnce>
+            <Fade direction="down" fraction="0.5" triggerOnce>
               <DeveloperAnimate />
             </Fade>
             

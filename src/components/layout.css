@@ -667,7 +667,7 @@ section {
 }
 .animation_fadedown_second{
   animation-duration: 2s;
-  animation-delay: 1s;
+  animation-delay: 2.7s;
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
   animation-iteration-count: infinite;

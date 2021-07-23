@@ -84,15 +84,15 @@ const Realisations = (props) => {
     <section id="realisations" className={isDarkTheme ? "dark_bg" : "light_bg"}>
       <Container>
         <Sectiontitle title="Zrealizowane projekty" />
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{overflow: "hidden"}}>
           {realisations.map((item, index) => {
-            console.log(images)
+            //console.log(images)
             const image = images.filter(function(itemdata){
               
               return(itemdata.node.name === item.img)});
-            console.log(image)
+            //console.log(image)
             const thisImage = getImage(image[0].node);
-            console.log(thisImage);
+            //console.log(thisImage);
             return(
             <Grid
               item
@@ -104,7 +104,7 @@ const Realisations = (props) => {
                   : {}
               }
             >
-              <Slide direction={index%2 ===0? "left":"right"} fraction="1" triggerOnce>
+              <Slide direction={index%2 ===0? "left":"right"} fraction="0.5"  triggerOnce>
               <Paper elevation={3} className={classes.paper}>
                 <Box p={4} style={{ height: "100%" }}>
                   <Grid container>

@@ -72,7 +72,7 @@ const Special = () => {
           {specials.map((item, index) => (
            
               <Grid item className={classes.gridItem} key={item}>
-                 <Zoom delay={index * 100} fraction="1" triggerOnce> 
+                 <Zoom delay={index * 100} fraction="0.5" triggerOnce> 
               <Paper elevation={0} className={classes.paper}>
                 <Box p={4} style={{ height: "100%", minHeight: "250px" }}>
                   <Typography

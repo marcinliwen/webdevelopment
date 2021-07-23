@@ -91,7 +91,7 @@ const Steps = () => {
         <Grid container spacing={2}>
           {steps.map((item, index) => (
             <Grid item className={classes.gridItem} key={index}>
-              <Fade delay={index * 100} fraction="1" triggerOnce style={{height: "100%"}}>
+              <Fade delay={index * 100} fraction="0.5" triggerOnce style={{height: "100%"}}>
               <Paper elevation={3} className={classes.paper}>
                 <Box>
                   <Typography
