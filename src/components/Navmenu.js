@@ -23,6 +23,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 
+import Menuburger from "./Menuburger"
+
 
 const useStyles = makeStyles({
   list: {
@@ -107,6 +109,7 @@ export default function SwipeableTemporaryDrawer() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
+    console.log('menu')
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -114,33 +117,57 @@ export default function SwipeableTemporaryDrawer() {
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
+  const burgerMenuClickHandler = () =>{
+    if(document.querySelector('main').classList.contains('is-open')){
+      
+      document.querySelector('main').classList.remove('is-open-rotate')
+      setTimeout(()=>{
+        document.querySelector('main').classList.remove('is-open');
+        document.body.classList.remove("menu-is-open")
+      }, 700)
+    }else{
+      document.querySelector('main').classList.add('is-open');
+      document.querySelector('main').classList.add('is-open-rotate')
+      document.body.classList.add("menu-is-open");
+    }
+  }
+
+  const menuClickCloseMenu = (id) =>{
+    return new Promise( (resolve)=>{
+      if(document.querySelector('main').classList.contains('is-open')){
+        resolve(burgerMenuClickHandler())
+      };
+    })
+  }
+
+  const menuClickHandler =(id)=>{
+    burgerMenuClickHandler()
+    setTimeout(()=>{
+      scrollTo(id)
+    },900)
+  }
+  const List = (anchor) => (
     <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      })}
+      className="menu-list"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <ul>
         {['Home', 'Oferta', 'Etapy', 'Realizacje', 'Kontakt' ].map((text, index) => (
-          <ListItem style={{padding: '0', margin:'0'}}>
-          <Menubutton 
-            href={getIdforLink(index)} 
+          <li style={{padding: '0', margin:'0'}}>
+          <a 
+            //href={getIdforLink(index)} 
             key={text}
-            disableFocusRipple={true}
-            disableRipple={true}
-            disableElevation={true}
-            fullWidth={true}
             className={classes.menuButton}
+            onClick={() => menuClickHandler(getIdforLink(index))}
             >
-            <Typography style={{fontSize: '1.5rem'}} >{text}</Typography>
-          </Menubutton>
-          </ListItem>
+            <p style={{fontSize: '1.5rem'}} >{text}</p>
+          </a>
+          </li>
           
         ))}
-      </List>
+      </ul>
     </div>
   );
 const anchor = 'right';
@@ -149,21 +176,14 @@ const anchor = 'right';
     <div>
       {/*{['left', 'right', 'top', 'bottom'].map((anchor) => (*/}
         <React.Fragment key={anchor} >
-          <Box className={classes.burgerConteiner}>
+          {/*<Box className={classes.burgerConteiner}>
             <a style={{display: "block"}} onClick={toggleDrawer(anchor, true)} >
               <DehazeIcon style={{ fontSize: 44 }} />
             </a>
-          </Box>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
-            style={{justifyContent: 'center'}}
-
-          >
-            {list(anchor)}
-          </Drawer>
+      </Box>*/}
+          <Menuburger  onCLickMe={burgerMenuClickHandler}/>
+          <List />
+          
         </React.Fragment>
       {/*}))}*/}
     </div>

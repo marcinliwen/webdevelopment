@@ -36,6 +36,7 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

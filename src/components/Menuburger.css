@@ -1,0 +1,33 @@
+.burder-menu {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.burder-menu > span {
+    height: 2px;
+    width: 100%;
+    background: #000;
+    display: block;
+    margin: 6px 0;
+}
+
+.burder-menu > span:nth-child(1) {
+    width: 50%;
+    margin-left: auto;
+    transition: transform .7s,top .7s,width .7s,-webkit-transform .7s;
+}
+.burder-menu > span:nth-child(3) {
+    width: 70%;
+    margin-left: auto;
+    transition: transform .5s,top .5s,width .5s,-webkit-transform .5s;
+}
+
+.burder-menu:hover span {
+    width: 100%;
+    transition: transform .5s,top .5s,width .5s,-webkit-transform .5s;
+}
