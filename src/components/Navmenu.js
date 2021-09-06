@@ -121,14 +121,21 @@ export default function SwipeableTemporaryDrawer() {
     if(document.querySelector('main').classList.contains('is-open')){
       
       document.querySelector('main').classList.remove('is-open-rotate')
+      document.body.classList.remove('menu-position')
       setTimeout(()=>{
         document.querySelector('main').classList.remove('is-open');
-        document.body.classList.remove("menu-is-open")
+        document.querySelector(".wrapper-perspective").classList.remove("menu-is-open")
+        document.body.classList.remove('menu-helper')
       }, 700)
     }else{
+      
       document.querySelector('main').classList.add('is-open');
       document.querySelector('main').classList.add('is-open-rotate')
-      document.body.classList.add("menu-is-open");
+      document.querySelector(".wrapper-perspective").classList.add("menu-is-open");
+      document.body.classList.add('menu-helper');
+      setTimeout(()=>{
+        document.body.classList.add('menu-position')
+      }, 700)
     }
   }
 

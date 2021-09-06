@@ -92,7 +92,10 @@ const Layout = ({ children }) => {
         {/*<Switch checked={darkState} onChange={handleThemeChange} />*/}
         <Header handleThemeChange={handleThemeChange} darkState={darkState} />
         <Navmenu />
+        <div className="wrapper-perspective">
         <main>{children}</main>
+        </div>
+        
         <footer style={{textAlign: "center"}}>
           © {new Date().getFullYear()},
           {` `}
