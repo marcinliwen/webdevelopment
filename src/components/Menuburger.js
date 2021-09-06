@@ -1,13 +1,19 @@
 import React from 'react';
 import './Menuburger.css'
+import { useTheme } from "@material-ui/core/styles"
+
 
 const clickHandler =()=>{
-    console.log("this is menu")
+    //console.log("this is menu")
 }
+
+
 const  Menuburger =(props)=>{
-    console.log('menuburger props: ' + props.onCLickMe)
+    const isDarkTheme = useTheme().palette.type === "dark"
+
+    console.log('menuburger: ' + isDarkTheme)
     return(
-        <a className="burder-menu" onClick={props.onCLickMe}>
+        <a className={`burder-menu ${isDarkTheme ? 'dark' :''}`} onClick={props.onCLickMe}>
             <span></span>
             <span></span>
             <span></span>

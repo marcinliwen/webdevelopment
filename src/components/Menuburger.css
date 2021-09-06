@@ -1,5 +1,5 @@
 .burder-menu {
-    position: fixed;
+    position: absolute;
     top: 25px;
     right: 25px;
     width: 44px;
@@ -15,7 +15,9 @@
     display: block;
     margin: 6px 0;
 }
-
+.burder-menu.dark span {
+    background: #fff;
+}
 .burder-menu > span:nth-child(1) {
     width: 50%;
     margin-left: auto;

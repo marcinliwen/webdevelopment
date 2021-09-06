@@ -15,9 +15,9 @@ import MobileMenu from "./MobileMenu"
 import Desktopmenu from "./Desktopmenu"
 
 const SwitchStyle = {
-  position: "fixed",
-  top: "0px",
-  left: "0px",
+  position: "absolute",
+  top: "25px",
+  left: "25px",
   zIndex: '1201'
 }
 
