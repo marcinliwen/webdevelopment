@@ -13,6 +13,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MobileMenu from "./MobileMenu"
 import Desktopmenu from "./Desktopmenu"
+import ScrollUp from "./ScrollUp"
 
 const SwitchStyle = {
   position: "absolute",
@@ -45,6 +46,7 @@ const Header = props => {
         <Switch checked={props.darkState} onChange={props.handleThemeChange} />
       </Box>
       {/*match_md ? <Desktopmenu /> : <MobileMenu />*/}
+      <ScrollUp showBelow={650}/>
     </header>
   )
 }
