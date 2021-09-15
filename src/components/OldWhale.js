@@ -11,8 +11,8 @@ export default function OldWhale() {
     return(
     <section style={{minHeight: "inherit"}}>
       {isDarkTheme
-        ? <StaticImage  src="../images/dark_oldwhale.png" alt="A kitten" /> 
-        :<StaticImage  src="../images/oldwhale.png" alt="A kitten" /> 
+        ? <StaticImage  style={{position: "fixed", top:"50%", transform: "translateY(-50%)", left:"0", zIndex:"-1"}}  src="../images/dark_oldwhale.png" alt="A kitten" /> 
+        :<StaticImage  style={{position: "fixed", top:"50%", transform: "translateY(-50%)", left:"0", zIndex:"-1"}}  src="../images/oldwhale.png" alt="A kitten" /> 
       }
     </section> 
     )

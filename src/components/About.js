@@ -37,6 +37,7 @@ const style = {
 const About = () => {
   const theme = useTheme()
   const match_md = useMediaQuery(theme.breakpoints.up("md"))
+  const isDarkTheme = useTheme().palette.type === "dark"
 
   return (
     <section id="realisations">
@@ -50,7 +51,7 @@ const About = () => {
               justifyContent="center"
             >
                 <Box mb={4}>
-                  <Typography variant="h2">{about.title}</Typography>
+                  <Typography variant="h2" className={isDarkTheme?"":"text-image"}>{about.title}</Typography>
                 </Box>
                 <Fade  triggerOnce>
 

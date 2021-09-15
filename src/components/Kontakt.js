@@ -31,6 +31,7 @@ const Kontakt = () => {
       width: "100%",
     },
   }
+  const isDarkTheme = useTheme().palette.type === "dark"
 
   return (
     <section id="kontakt">
@@ -43,7 +44,7 @@ const Kontakt = () => {
             alignItems="flex-start"
             justifyContent="center"
           >
-              <Typography paragraph  variant="h2">Napisz do mnie</Typography>
+              <Typography paragraph  variant="h2" className={isDarkTheme?"":"text-image"}>Napisz do mnie</Typography>
               
           </Box>
           <Box style={match_md ? style.img : style.img_sm}>
