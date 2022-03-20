@@ -55,7 +55,7 @@ export default function ResponsiveDialog(props) {
     
 
     const handleSubmit = e => {
-        console.log('send message')
+        //console.log('send message')
         e.preventDefault()
         const form = e.target
         fetch("/", {

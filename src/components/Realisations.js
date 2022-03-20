@@ -19,11 +19,36 @@ import Sectiontitle from "./sectiontitle"
 import ComponenetName from "./ComponenetName"
 const realisations = [
   {
+    title: "Sanoko.pl",
+    desc:
+      "Projekt i realizacja. Dopasowanie do urządzeń mobilnych. Blog. Sklep z jednym produktem. ",
+    link: "",
+    img: "sanoko",
+    tech: "Wordpress, Woocommerce"
+  },
+  {
+    title: "Polish Gold",
+    desc:
+      "Realizacja projektu strony. Dopasowanie do urządzeń mobilnych. Blog. Sklep z jednym produktem. ",
+    link: "",
+    img: "polishgold",
+    tech: "Wordpress, Woocommerce"
+  },
+  {
+    title: "djpiotrszymanski.pl",
+    desc:
+      "Realizacja projektu strony. Dopasowanie do urządzeń mobilnych. Rozbudowana galeria. Formularz kontaktowy. ",
+    link: "https://djpiotrszymanski.pl/",
+    img: "dj",
+    tech: "Gatsby/React"
+  },
+  {
     title: "Zielonetechnologie.net",
     desc:
-      "Strona Firmowa. Strona prezentująca usługi firmy, wdrożono kalkulator oferty, najważniejsze informacje o dzialalności firmy, lokalizację w Mapy Google, formularze kontaktowe, podstrony z informacjami o usługach.  ",
+      "Strona Firmowa - projekt i realizacja. Kalkulator oferty. Formularz kontaktowy. Popup. Mapy Google. Wsparcie. ",
     link: "https://www.zielonetechnologie.net/",
     img: "greentech",
+    tech: "Gatsby/React"
   },
   {
     title: "AnimalVet",
@@ -31,6 +56,7 @@ const realisations = [
       "Strona Firmowa. Strona prezentuje gabinet weterynaryjny, kategorie usług, opis gabinetu i lekarzy, lokalizację w Mamach Google, formularz kontaktowy i newsletter, strona dwujęzyczna. ",
     link: "https://animalvettest.netlify.app/",
     img: "animalvet",
+    tech: "Gatsby/React"
   },
   {
     title: "Kaja Dekor",
@@ -38,6 +64,7 @@ const realisations = [
       "Strona firmowa. Strona prezentuje usługi firmy dekoracyjnej, skupia się na rozbudowanej galerii zdjęć z realizacji. Dodany moduł CMS do łatwego uzupełniania treści i zdjęć, dwu języczna strona, lokalizacja w Mapach Google.",
     link: "https://studiofiran.netlify.app/",
     img: "firany",
+    tech: "Gatsby/React"
   },
 ]
 const useStyles = makeStyles(theme => ({
@@ -97,7 +124,7 @@ const Realisations = (props) => {
             <Grid
               item
               md={12}
-              key={item}
+              key={item.index}
               style={
                 index > 3
                   ? { width: "100%", maxWidth: "100%", flex: "100%" }
@@ -114,7 +141,10 @@ const Realisations = (props) => {
                         target="_blank"
                         rel="noreferrer"
                       ><Typography paragraph variant="h4" style={{wordBreak: "break-word"}}>{item.title}</Typography></a>
+                      <Typography variant="h5">Zadania:</Typography>
                       <Typography variant="body1">{item.desc}</Typography>
+                      
+                      {item.tech? <Box><Typography variant="h5">Technologia:</Typography> <Typography variant="body1">{item.tech}</Typography> </Box>: "" }
                     </Grid>
                     <Grid item md={6}>
                     <a

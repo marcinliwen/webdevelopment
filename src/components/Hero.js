@@ -109,7 +109,7 @@ const Hero = props => {
   const classes = useStyles()
 
   const isDarkTheme = useTheme().palette.type === "dark"
-  console.log('palette: ', useTheme().palette)
+  /* console.log('palette: ', useTheme().palette) */
 
   return (
     <section
@@ -153,6 +153,18 @@ const Hero = props => {
               
               </Fade>
               
+            </Box>
+            <Box>
+              <Fade  delay="50" triggerOnce>
+                <Typography variant="h5">Technologie:</Typography>
+                <Box mb={4} >
+                  <Typography variant="body2">Gatsby/React</Typography>
+                  <Typography variant="body2">Wordpress</Typography>
+                  <Typography variant="body2">Woocommerce</Typography>
+                  <Typography variant="body2">Prestashop</Typography>
+                  <Typography variant="body2">CSS/HTML/JS</Typography>
+                </Box>
+              </Fade>
             </Box>
             <Fade delay="100" triggerOnce> 
               <Typography

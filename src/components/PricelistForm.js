@@ -109,7 +109,7 @@ export default function ResponsiveDialog(props) {
     
 
     const handleSubmit = e => {
-        console.log('send message')
+        //console.log('send message')
         e.preventDefault()
         const form = e.target
         fetch("/", {
@@ -133,7 +133,7 @@ export default function ResponsiveDialog(props) {
 
   return (
         <Box pt={2} pb={1} mt="auto" textAlign="center" display="flex" justifyContent="space-evenly" flexWrap="wrap" >
-            <Button onClick={handleClickOpen} variant="contained" className={classes.gradient_dark, classes.btnList} style={{marginTop: "8px", marginBottom:"8px"}}>Więcej</Button>
+            <Button onClick={handleClickOpen} variant="contained" className={[classes.gradient_dark , classes.btnList]} style={{marginTop: "8px", marginBottom:"8px"}}>Więcej</Button>
     <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
       <Paper
         className={classes.formDialog}

@@ -109,7 +109,7 @@ export default function SwipeableTemporaryDrawer() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    console.log('menu')
+    //console.log('menu')
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
